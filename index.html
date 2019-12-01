@@ -6,76 +6,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Entangled</title>
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style>
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  { color: #eeeeee; background-color: #303030; }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ffcfaf; } /* Alert */
-code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
-code span.at { } /* Attribute */
-code span.bn { color: #aadfff; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #aaffdf; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #dca3a3; } /* Char */
-code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
-code span.co { color: #7f9f7f; } /* Comment */
-code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
-code span.do { color: #7f9f7f; } /* Documentation */
-code span.dt { color: #dfdfbf; } /* DataType */
-code span.dv { color: #aaffdf; } /* DecVal */
-code span.er { color: #c3bf9f; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #c0bed1; } /* Float */
-code span.fu { color: #efef8f; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
-code span.kw { color: #aaccef; font-weight: bold; } /* Keyword */
-code span.op { color: #cceeff; } /* Operator */
-code span.ot { color: #efef8f; } /* Other */
-code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
-code span.sc { color: #dca3a3; } /* SpecialChar */
-code span.ss { color: #cc9393; } /* SpecialString */
-code span.st { color: #aaffdf; font-style: italic; } /* String */
-code span.va { } /* Variable */
-code span.vs { color: #cc9393; } /* VerbatimString */
-code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #eeeeee; background-color: #303030; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ffcfaf; } /* Alert */
+    code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+    code span.at { } /* Attribute */
+    code span.bn { color: #aadfff; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #aaffdf; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #dca3a3; } /* Char */
+    code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+    code span.co { color: #7f9f7f; } /* Comment */
+    code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+    code span.do { color: #7f9f7f; } /* Documentation */
+    code span.dt { color: #dfdfbf; } /* DataType */
+    code span.dv { color: #aaffdf; } /* DecVal */
+    code span.er { color: #c3bf9f; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #c0bed1; } /* Float */
+    code span.fu { color: #efef8f; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+    code span.kw { color: #aaccef; font-weight: bold; } /* Keyword */
+    code span.op { color: #cceeff; } /* Operator */
+    code span.ot { color: #efef8f; } /* Other */
+    code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+    code span.sc { color: #dca3a3; } /* SpecialChar */
+    code span.ss { color: #cc9393; } /* SpecialString */
+    code span.st { color: #aaffdf; font-style: italic; } /* String */
+    code span.va { } /* Variable */
+    code span.vs { color: #cc9393; } /* VerbatimString */
+    code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   </style>
   <link rel="stylesheet" href="dark.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -119,8 +118,8 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 </div>
 <div class="generated-output">
 <p>The square of the hypothenuse is the sum of the two right-angled sides squared: <span class="math display">\[a^2 + b^2 = c^2\]</span></p>
-<div class="annotatedCode">
-<p><em>«pythagoras»=</em></p>
+<div class="annotated-code">
+<p><span><em>«pythagoras»=</em></span></p>
 <div class="sourceCode" id="pythagoras"><pre class="sourceCode python"><code class="sourceCode python"><span id="pythagoras-1"><a href="#pythagoras-1"></a><span class="kw">def</span> vector_length(x, y):</span>
 <span id="pythagoras-2"><a href="#pythagoras-2"></a>    <span class="cf">return</span> sqrt(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)</span></code></pre></div>
 </div>
@@ -159,21 +158,21 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 </div>
 <div class="generated-output">
 <p>To count the words in a sentence, first split the sentence into words, then count the number of words in the list.</p>
-<div class="annotatedCode">
-<p><em>«word-count»=</em></p>
+<div class="annotated-code">
+<p><span><em>«word-count»=</em></span></p>
 <div class="sourceCode" id="word-count"><pre class="sourceCode python"><code class="sourceCode python"><span id="word-count-1"><a href="#word-count-1"></a><span class="kw">def</span> word_count(sentence):</span>
 <span id="word-count-2"><a href="#word-count-2"></a>    <span class="op">&lt;&lt;</span>split<span class="op">-</span>into<span class="op">-</span>words<span class="op">&gt;&gt;</span></span>
 <span id="word-count-3"><a href="#word-count-3"></a>    <span class="op">&lt;&lt;</span>count<span class="op">-</span>words<span class="op">&gt;&gt;</span></span>
 <span id="word-count-4"><a href="#word-count-4"></a>    <span class="cf">return</span> count</span></code></pre></div>
 </div>
 <p>The default arguments to the <code>.split</code> method split on any white space.</p>
-<div class="annotatedCode">
-<p><em>«split-into-words»=</em></p>
+<div class="annotated-code">
+<p><span><em>«split-into-words»=</em></span></p>
 <div class="sourceCode" id="split-into-words"><pre class="sourceCode python"><code class="sourceCode python"><span id="split-into-words-1"><a href="#split-into-words-1"></a>words <span class="op">=</span> sentence.split()</span></code></pre></div>
 </div>
 <p>Counting is done with the <code>len</code> function.</p>
-<div class="annotatedCode">
-<p><em>«count-words»=</em></p>
+<div class="annotated-code">
+<p><span><em>«count-words»=</em></span></p>
 <div class="sourceCode" id="count-words"><pre class="sourceCode python"><code class="sourceCode python"><span id="count-words-1"><a href="#count-words-1"></a>count <span class="op">=</span> <span class="bu">len</span>(words)</span></code></pre></div>
 </div>
 </div>
@@ -181,12 +180,12 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <blockquote>
 <p>“Talk is cheap. Show me the code.” <a href="">Linus Torvalds</a></p>
 </blockquote>
-<h4 id="test-your-documentation-comming-soon">Test your documentation (comming soon!)</h4>
+<h4 id="test-your-documentation">Test your documentation</h4>
 <div class="example">
 <div class="given-input">
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a> Examples of counting words, the zero-case:</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a> Counting words, the zero-case:</span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a> <span class="bn">``` {.python .doctest #test-word-count}</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a> <span class="bn">``` {.python .doctest #word-count}</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a><span class="bn"> word_count(&quot;&quot;)</span></span>
 <span id="cb3-5"><a href="#cb3-5"></a><span class="bn"> ---</span></span>
 <span id="cb3-6"><a href="#cb3-6"></a><span class="bn"> 0</span></span>
@@ -194,26 +193,42 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <span id="cb3-8"><a href="#cb3-8"></a></span>
 <span id="cb3-9"><a href="#cb3-9"></a> And a small sentence:</span>
 <span id="cb3-10"><a href="#cb3-10"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a> <span class="bn">``` {.python .doctest #test-word-count}</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a> <span class="bn">``` {.python .doctest #word-count}</span></span>
 <span id="cb3-12"><a href="#cb3-12"></a><span class="bn"> word_count(&quot;Hebban olla uogala&quot;)</span></span>
 <span id="cb3-13"><a href="#cb3-13"></a><span class="bn"> ---</span></span>
 <span id="cb3-14"><a href="#cb3-14"></a><span class="bn"> 3</span></span>
 <span id="cb3-15"><a href="#cb3-15"></a><span class="bn"> ```</span></span></code></pre></div>
 </div>
 <div class="generated-output">
-<p>Examples of counting words, the null-case:</p>
-<div class="annotatedCode">
-<p><em>«test-word-count»=</em></p>
-<div class="sourceCode" id="test-word-count"><pre class="sourceCode python doctest"><code class="sourceCode python"><span id="test-word-count-1"><a href="#test-word-count-1"></a>word_count(<span class="st">&quot;&quot;</span>)</span>
-<span id="test-word-count-2"><a href="#test-word-count-2"></a><span class="op">---</span></span>
-<span id="test-word-count-3"><a href="#test-word-count-3"></a><span class="dv">0</span></span></code></pre></div>
+<p>Counting words, the zero-case:</p>
+<div class="annotated-code">
+<p><span><em>«word-count»+</em></span></p>
+<div class="doctest" data-status="SUCCESS">
+<div class="doctestInput">
+<div class="sourceCode" id="word-count" data-status="SUCCESS"><pre class="sourceCode python doctest input"><code class="sourceCode python"><span id="word-count-1"><a href="#word-count-1"></a>word_count(<span class="st">&quot;&quot;</span>)</span></code></pre></div>
+</div>
+<div class="doctestOutput">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="dv">0</span></span></code></pre></div>
+</div>
+<div class="icon">
+
+</div>
+</div>
 </div>
 <p>And a small sentence:</p>
-<div class="annotatedCode">
-<p><em>«test-word-count»=+</em></p>
-<div class="sourceCode" id="test-word-count"><pre class="sourceCode python doctest"><code class="sourceCode python"><span id="test-word-count-1"><a href="#test-word-count-1"></a>word_count(<span class="st">&quot;Hebban olla uogala&quot;</span>)</span>
-<span id="test-word-count-2"><a href="#test-word-count-2"></a><span class="op">---</span></span>
-<span id="test-word-count-3"><a href="#test-word-count-3"></a><span class="dv">3</span></span></code></pre></div>
+<div class="annotated-code">
+<p><span><em>«word-count»+</em></span></p>
+<div class="doctest" data-status="SUCCESS">
+<div class="doctestInput">
+<div class="sourceCode" id="word-count" data-status="SUCCESS"><pre class="sourceCode python doctest input"><code class="sourceCode python"><span id="word-count-1"><a href="#word-count-1"></a>word_count(<span class="st">&quot;Hebban olla uogala&quot;</span>)</span></code></pre></div>
+</div>
+<div class="doctestOutput">
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="dv">3</span></span></code></pre></div>
+</div>
+<div class="icon">
+
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -243,12 +258,21 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <div class="nav" style="text-align:center">
 <p><a class="prev" onclick="plusSlides(-1)">❮</a> <a class="next" onclick="plusSlides(1)">❯</a></p>
 </div>
-</div>
 <div style="text-align: center;">
 <p><span class="dot" onclick="currentSlide(1)"></span> <span class="dot" onclick="currentSlide(2)"></span> <span class="dot" onclick="currentSlide(3)"></span> <span class="dot" onclick="currentSlide(4)"></span></p>
 </div>
 <script src="jquery-3.3.1.slim.min.js"></script>
 <script src="anim.js"></script>
+</div>
+<h2 id="python-filters">Python filters</h2>
+<p>We have created a set of Python based Pandoc filters that can:</p>
+<ul>
+<li><strong>Tangle</strong> your code</li>
+<li>Add <strong>name tags</strong> to rendered output</li>
+<li>Run <strong>documentation tests</strong> through Jupyter</li>
+</ul>
+<p>The Python filters act as prototyping platform for features that will be included with Entangled. It is easy to install and has almost no dependencies outside of Pandoc and a recent version of Python (≥ 3.7). This also makes the Python filters very easy to setup on automated builds, like Github Actions.</p>
+<p>More information on these Pandoc filters: <a href="https://github.com/entangled/filters">https://github.com/entangled/filters</a></p>
 <h1 id="section-examples">Demo Gallery</h1>
 <h4 id="hello-world">Hello, World!</h4>
 <div id="examples-div">
