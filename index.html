@@ -5,76 +5,76 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Entangled</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-      }
-    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-    div.sourceCode
-      { color: #eeeeee; background-color: #303030; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ffcfaf; } /* Alert */
-    code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
-    code span.at { } /* Attribute */
-    code span.bn { color: #aadfff; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #aaffdf; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #dca3a3; } /* Char */
-    code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
-    code span.co { color: #7f9f7f; } /* Comment */
-    code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
-    code span.do { color: #7f9f7f; } /* Documentation */
-    code span.dt { color: #dfdfbf; } /* DataType */
-    code span.dv { color: #aaffdf; } /* DecVal */
-    code span.er { color: #c3bf9f; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #c0bed1; } /* Float */
-    code span.fu { color: #efef8f; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
-    code span.kw { color: #aaccef; font-weight: bold; } /* Keyword */
-    code span.op { color: #cceeff; } /* Operator */
-    code span.ot { color: #efef8f; } /* Other */
-    code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
-    code span.sc { color: #dca3a3; } /* SpecialChar */
-    code span.ss { color: #cc9393; } /* SpecialString */
-    code span.st { color: #aaffdf; font-style: italic; } /* String */
-    code span.va { } /* Variable */
-    code span.vs { color: #cc9393; } /* VerbatimString */
-    code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #eeeeee; background-color: #303030; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #aadfff; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #aaffdf; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #aaffdf; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #aaccef; font-weight: bold; } /* Keyword */
+code span.op { color: #cceeff; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #aaffdf; font-style: italic; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   </style>
   <link rel="stylesheet" href="nlesc.css" />
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -107,21 +107,21 @@
 <h4 id="name-your-code">Name your code</h4>
 <div class="example">
 <div class="given-input">
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a> The square of the hypothenuse is the sum</span>
-<span id="cb1-2"><a href="#cb1-2"></a> of the two right-angled sides squared:</span>
-<span id="cb1-3"><a href="#cb1-3"></a> $$a^2 + b^2 = c^2$$</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a> <span class="bn">``` {.python #pythagoras}</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bn"> def vector_length(x, y):</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="bn">     return sqrt(x**2 + y**2)</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="bn"> ```</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb1-1" title="1"> The square of the hypothenuse is the sum</a>
+<a class="sourceLine" id="cb1-2" title="2"> of the two right-angled sides squared:</a>
+<a class="sourceLine" id="cb1-3" title="3"> $$a^2 + b^2 = c^2$$</a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"> <span class="bn">``` {.python #pythagoras}</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="bn"> def vector_length(x, y):</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="bn">     return sqrt(x**2 + y**2)</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="bn"> ```</span></a></code></pre></div>
 </div>
 <div class="generated-output">
 <p>The square of the hypothenuse is the sum of the two right-angled sides squared: <span class="math display">\[a^2 + b^2 = c^2\]</span></p>
 <div class="annotated-code">
 <p><span><em>«pythagoras»=</em></span></p>
-<div class="sourceCode" id="pythagoras"><pre class="sourceCode python"><code class="sourceCode python"><span id="pythagoras-1"><a href="#pythagoras-1"></a><span class="kw">def</span> vector_length(x, y):</span>
-<span id="pythagoras-2"><a href="#pythagoras-2"></a>    <span class="cf">return</span> sqrt(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="pythagoras"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="pythagoras-1" title="1"><span class="kw">def</span> vector_length(x, y):</a>
+<a class="sourceLine" id="pythagoras-2" title="2">    <span class="cf">return</span> sqrt(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)</a></code></pre></div>
 </div>
 </div>
 </div>
@@ -131,49 +131,49 @@
 <h4 id="compose-your-program">Compose your program</h4>
 <div class="example">
 <div class="given-input">
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a> To count the words in a sentence, first</span>
-<span id="cb2-2"><a href="#cb2-2"></a> split the sentence into words, then</span>
-<span id="cb2-3"><a href="#cb2-3"></a> count the number of words in the list.</span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a> <span class="bn">``` {.python #word-count}</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="bn"> def word_count(sentence):</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="bn">     &lt;&lt;split-into-words&gt;&gt;</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="bn">     &lt;&lt;count-words&gt;&gt;</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="bn">     return count</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="bn"> ```</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a></span>
-<span id="cb2-12"><a href="#cb2-12"></a> The default arguments to the <span class="bn">`.split`</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a> method split on any white space.</span>
-<span id="cb2-14"><a href="#cb2-14"></a></span>
-<span id="cb2-15"><a href="#cb2-15"></a> <span class="bn">``` {.python #split-into-words}</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="bn"> words = sentence.split()</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="bn"> ```</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a></span>
-<span id="cb2-19"><a href="#cb2-19"></a> Counting is done with the <span class="bn">`length`</span></span>
-<span id="cb2-20"><a href="#cb2-20"></a> function.</span>
-<span id="cb2-21"><a href="#cb2-21"></a></span>
-<span id="cb2-22"><a href="#cb2-22"></a> <span class="bn">``` {.python #count-words}</span></span>
-<span id="cb2-23"><a href="#cb2-23"></a><span class="bn"> count = len(words)</span></span>
-<span id="cb2-24"><a href="#cb2-24"></a><span class="bn"> ```</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb2-1" title="1"> To count the words in a sentence, first</a>
+<a class="sourceLine" id="cb2-2" title="2"> split the sentence into words, then</a>
+<a class="sourceLine" id="cb2-3" title="3"> count the number of words in the list.</a>
+<a class="sourceLine" id="cb2-4" title="4"></a>
+<a class="sourceLine" id="cb2-5" title="5"> <span class="bn">``` {.python #word-count}</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="bn"> def word_count(sentence):</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="bn">     &lt;&lt;split-into-words&gt;&gt;</span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="bn">     &lt;&lt;count-words&gt;&gt;</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="bn">     return count</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="bn"> ```</span></a>
+<a class="sourceLine" id="cb2-11" title="11"></a>
+<a class="sourceLine" id="cb2-12" title="12"> The default arguments to the <span class="bn">`.split`</span></a>
+<a class="sourceLine" id="cb2-13" title="13"> method split on any white space.</a>
+<a class="sourceLine" id="cb2-14" title="14"></a>
+<a class="sourceLine" id="cb2-15" title="15"> <span class="bn">``` {.python #split-into-words}</span></a>
+<a class="sourceLine" id="cb2-16" title="16"><span class="bn"> words = sentence.split()</span></a>
+<a class="sourceLine" id="cb2-17" title="17"><span class="bn"> ```</span></a>
+<a class="sourceLine" id="cb2-18" title="18"></a>
+<a class="sourceLine" id="cb2-19" title="19"> Counting is done with the <span class="bn">`length`</span></a>
+<a class="sourceLine" id="cb2-20" title="20"> function.</a>
+<a class="sourceLine" id="cb2-21" title="21"></a>
+<a class="sourceLine" id="cb2-22" title="22"> <span class="bn">``` {.python #count-words}</span></a>
+<a class="sourceLine" id="cb2-23" title="23"><span class="bn"> count = len(words)</span></a>
+<a class="sourceLine" id="cb2-24" title="24"><span class="bn"> ```</span></a></code></pre></div>
 </div>
 <div class="generated-output">
 <p>To count the words in a sentence, first split the sentence into words, then count the number of words in the list.</p>
 <div class="annotated-code">
 <p><span><em>«word-count»=</em></span></p>
-<div class="sourceCode" id="word-count"><pre class="sourceCode python"><code class="sourceCode python"><span id="word-count-1"><a href="#word-count-1"></a><span class="kw">def</span> word_count(sentence):</span>
-<span id="word-count-2"><a href="#word-count-2"></a>    <span class="op">&lt;&lt;</span>split<span class="op">-</span>into<span class="op">-</span>words<span class="op">&gt;&gt;</span></span>
-<span id="word-count-3"><a href="#word-count-3"></a>    <span class="op">&lt;&lt;</span>count<span class="op">-</span>words<span class="op">&gt;&gt;</span></span>
-<span id="word-count-4"><a href="#word-count-4"></a>    <span class="cf">return</span> count</span></code></pre></div>
+<div class="sourceCode" id="word-count"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="word-count-1" title="1"><span class="kw">def</span> word_count(sentence):</a>
+<a class="sourceLine" id="word-count-2" title="2">    <span class="op">&lt;&lt;</span>split<span class="op">-</span>into<span class="op">-</span>words<span class="op">&gt;&gt;</span></a>
+<a class="sourceLine" id="word-count-3" title="3">    <span class="op">&lt;&lt;</span>count<span class="op">-</span>words<span class="op">&gt;&gt;</span></a>
+<a class="sourceLine" id="word-count-4" title="4">    <span class="cf">return</span> count</a></code></pre></div>
 </div>
 <p>The default arguments to the <code>.split</code> method split on any white space.</p>
 <div class="annotated-code">
 <p><span><em>«split-into-words»=</em></span></p>
-<div class="sourceCode" id="split-into-words"><pre class="sourceCode python"><code class="sourceCode python"><span id="split-into-words-1"><a href="#split-into-words-1"></a>words <span class="op">=</span> sentence.split()</span></code></pre></div>
+<div class="sourceCode" id="split-into-words"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="split-into-words-1" title="1">words <span class="op">=</span> sentence.split()</a></code></pre></div>
 </div>
 <p>Counting is done with the <code>len</code> function.</p>
 <div class="annotated-code">
 <p><span><em>«count-words»=</em></span></p>
-<div class="sourceCode" id="count-words"><pre class="sourceCode python"><code class="sourceCode python"><span id="count-words-1"><a href="#count-words-1"></a>count <span class="op">=</span> <span class="bu">len</span>(words)</span></code></pre></div>
+<div class="sourceCode" id="count-words"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="count-words-1" title="1">count <span class="op">=</span> <span class="bu">len</span>(words)</a></code></pre></div>
 </div>
 </div>
 </div>
@@ -183,70 +183,65 @@
 <h4 id="test-your-documentation">Test your documentation</h4>
 <div class="example">
 <div class="given-input">
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a> Counting words, the zero-case:</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a> <span class="bn">``` {.python .doctest #word-count}</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="bn"> word_count(&quot;&quot;)</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="bn"> ---</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="bn"> 0</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="bn"> ```</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a></span>
-<span id="cb3-9"><a href="#cb3-9"></a> And a small sentence:</span>
-<span id="cb3-10"><a href="#cb3-10"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a> <span class="bn">``` {.python .doctest #word-count}</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="bn"> word_count(&quot;Hebban olla uogala&quot;)</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="bn"> ---</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="bn"> 3</span></span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="bn"> ```</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb3-1" title="1"> Counting words, the zero-case:</a>
+<a class="sourceLine" id="cb3-2" title="2"></a>
+<a class="sourceLine" id="cb3-3" title="3"> <span class="bn">``` {.python .doctest #word-count}</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="bn"> word_count(&quot;&quot;)</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="bn"> ---</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="bn"> 0</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="bn"> ```</span></a>
+<a class="sourceLine" id="cb3-8" title="8"></a>
+<a class="sourceLine" id="cb3-9" title="9"> And a small sentence:</a>
+<a class="sourceLine" id="cb3-10" title="10"></a>
+<a class="sourceLine" id="cb3-11" title="11"> <span class="bn">``` {.python .doctest #word-count}</span></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="bn"> word_count(&quot;Hebban olla uogala&quot;)</span></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="bn"> ---</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="bn"> 3</span></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="bn"> ```</span></a></code></pre></div>
 </div>
 <div class="generated-output">
 <p>Counting words, the zero-case:</p>
 <div class="annotated-code">
 <p><span><em>«word-count»+</em></span></p>
-<div class="doctest" data-status="SUCCESS">
-<div class="doctestInput">
-<div class="sourceCode" id="word-count"><pre class="sourceCode python doctest"><code class="sourceCode python"><span id="word-count-1"><a href="#word-count-1"></a>word_count(<span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="dv">0</span></span></code></pre></div>
-</div>
-</div>
+<div class="sourceCode" id="word-count"><pre class="sourceCode python doctest"><code class="sourceCode python"><a class="sourceLine" id="word-count-1" title="1">word_count(<span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="word-count-2" title="2"><span class="op">---</span></a>
+<a class="sourceLine" id="word-count-3" title="3"><span class="dv">0</span></a></code></pre></div>
 </div>
 <p>And a small sentence:</p>
 <div class="annotated-code">
 <p><span><em>«word-count»+</em></span></p>
-<div class="doctest" data-status="SUCCESS">
-<div class="doctestInput">
-<div class="sourceCode" id="word-count"><pre class="sourceCode python doctest"><code class="sourceCode python"><span id="word-count-1"><a href="#word-count-1"></a>word_count(<span class="st">&quot;Hebban olla uogala&quot;</span>)</span></code></pre></div>
-</div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="dv">3</span></span></code></pre></div>
+<div class="sourceCode" id="word-count"><pre class="sourceCode python doctest"><code class="sourceCode python"><a class="sourceLine" id="word-count-1" title="1">word_count(<span class="st">&quot;Hebban olla uogala&quot;</span>)</a>
+<a class="sourceLine" id="word-count-2" title="2"><span class="op">---</span></a>
+<a class="sourceLine" id="word-count-3" title="3"><span class="dv">3</span></a></code></pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
+<h2 id="read-more">Read more</h2>
+<ul>
+<li><a href="setting-up.html">Setting up a Literate Code project</a></li>
+<li><a href="https://entangled.github.io/bootstrap">Use the Bootstrap 4 template</a> <!-- - [Code Evaluation and Documentation Testing](eval-and-doctest.html) --></li>
+</ul>
 <h1 id="section-entangled">Entangled</h1>
 <p>Entangled makes literate programming <strong>easier</strong>. It keeps the markdown and program source in sync. This makes it more convenient to extend and debug your literate code.</p>
 <div id="slide-show">
 <div class="slide fade">
 <figure>
-<img src="img/01-getting-started.png" class="anim" data-still="img/01-getting-started.png" width="768" alt="" /><figcaption>Write your documentation, and fire up entangled</figcaption>
+<img src="img/01-getting-started.png" alt="Write your documentation, and fire up entangled" class="anim" data-still="img/01-getting-started.png" width="768" /><figcaption>Write your documentation, and fire up entangled</figcaption>
 </figure>
 </div>
 <div class="slide fade">
 <figure>
-<img src="img/02-adding-code.png" class="anim" data-still="img/02-adding-code.png" width="768" alt="" /><figcaption>Add annotated code blocks</figcaption>
+<img src="img/02-adding-code.png" alt="Add annotated code blocks" class="anim" data-still="img/02-adding-code.png" width="768" /><figcaption>Add annotated code blocks</figcaption>
 </figure>
 </div>
 <div class="slide fade">
 <figure>
-<img src="img/03-edit-code.png" class="anim" data-still="img/03-edit-code.png" width="768" alt="" /><figcaption>Use references to grow your program</figcaption>
+<img src="img/03-edit-code.png" alt="Use references to grow your program" class="anim" data-still="img/03-edit-code.png" width="768" /><figcaption>Use references to grow your program</figcaption>
 </figure>
 </div>
 <div class="slide fade">
 <figure>
-<img src="img/04-fixing-bugs.png" class="anim" data-still="img/04-fixing-bugs.png" width="768" alt="" /><figcaption>Fix bugs like you’d normally do</figcaption>
+<img src="img/04-fixing-bugs.png" alt="Fix bugs like you’d normally do" class="anim" data-still="img/04-fixing-bugs.png" width="768" /><figcaption>Fix bugs like you’d normally do</figcaption>
 </figure>
 </div>
 <div class="nav" style="text-align:center">
@@ -258,6 +253,9 @@
 <script src="jquery-3.3.1.slim.min.js"></script>
 <script src="anim.js"></script>
 </div>
+<h3 id="installing-entangled">Installing Entangled</h3>
+<p>Entangled is written in Haskell, and can be built on Linux, MacOS and Windows. Currently the best way to install, is to <a href="https://github.com/entangled/entangled">git clone https://github.com/entangled/entangled</a>, and build with GHC ≥ 8.6 using Cabal 3.0. Most GNU/Linux distributions ship an older version of Haskell. The easiest way to install a newer version is through <a href="https://www.haskell.org/ghcup/">GHCUp</a>.</p>
+<p>We are working on better deployment options that don’t depend on compiling from source. If you are hesitant to go through the trouble of installing Haskell, there is a Python module that will let you do most of the things Entangled can do, except the live-updating reverse tangle thing.</p>
 <h2 id="python-filters">Python filters</h2>
 <p>We have created a set of Python based Pandoc filters that can:</p>
 <ul>
@@ -266,46 +264,53 @@
 <li>Run <strong>documentation tests</strong> through Jupyter</li>
 </ul>
 <p>The Python filters act as prototyping platform for features that will be included with Entangled. It is easy to install and has almost no dependencies outside of Pandoc and a recent version of Python (≥ 3.7). This also makes the Python filters very easy to setup on automated builds, like Github Actions.</p>
+<p>Install these filters using:</p>
+<pre><code>    pip install entangled-filters</code></pre>
 <p>More information on these Pandoc filters: <a href="https://github.com/entangled/filters">https://github.com/entangled/filters</a></p>
 <h1 id="section-examples">Demo Gallery</h1>
 <h4 id="hello-world">Hello, World!</h4>
 <div id="examples-div">
 <div class="example">
 <figure>
-<img src="img/hello-world-thumb.jpg" alt="" /><figcaption>Apollo Earthrise</figcaption>
+<img src="img/hello-world-thumb.jpg" alt="Apollo Earthrise" /><figcaption>Apollo Earthrise</figcaption>
 </figure>
 <p><a href="https://entangled.github.io/entangled/hello-world.html">Hello World in C++</a>: Teaches the basics of literate programming using Markdown and fenced code blocks. Also shows how to use a BibTeX file for references.</p>
 </div>
 <h4 id="bottles">99 Bottles</h4>
 <div class="example">
 <figure>
-<img src="img/99-bottles-thumb.jpg" alt="" /><figcaption>99 bottles thumbnail</figcaption>
+<img src="img/99-bottles-thumb.jpg" alt="99 bottles thumbnail" /><figcaption>99 bottles thumbnail</figcaption>
 </figure>
 <p><a href="https://entangled.github.io/entangled/99-bottles.html">99-bottles in C++</a>: Over-engineered song-text generator. Teaching how to setup a basic C++ program with enTangleD, use of ArgAgg to parse command-line arguments, use of FmtLib to do string formatting and setting up a slightly non-basic Makefile.</p>
 </div>
 <h4 id="slasher">Slasher</h4>
 <div class="example">
 <figure>
-<img src="img/slasher-thumb.jpg" alt="" /><figcaption>Slasher thumbnail</figcaption>
+<img src="img/slasher-thumb.jpg" alt="Slasher thumbnail" /><figcaption>Slasher thumbnail</figcaption>
 </figure>
 <p><a href="https://entangled.github.io/entangled/elm-slasher.html">Slasher</a>: a browser game written in Elm. A dashing hero is zipping across the screen, only deflected by slashes and backslashes. The game works, but the source may need some more literacy in some places.</p>
 </div>
 <h4 id="cosmic-web">Cosmic web</h4>
 <div class="example">
 <figure>
-<img src="img/adhesion-code-thumb.jpg" alt="" /><figcaption>Adhesion code thumbnail</figcaption>
+<img src="img/adhesion-code-thumb.jpg" alt="Adhesion code thumbnail" /><figcaption>Adhesion code thumbnail</figcaption>
 </figure>
 <p><a href="https://jhidding.github.io/adhesion-code">Adhesion code</a>: presenting the cosmological adhesion model and its implementation in C++ and CGAL.</p>
 </div>
 </div>
 <h1 id="section-links">External Links</h1>
+<h2 id="blogs">Blogs</h2>
+<h3 id="why-all-youll-ever-need-is-markdown"><a href="https://blog.esciencecenter.nl/why-all-youll-ever-need-is-markdown-dc604f0ab309">Why all you’ll ever need is Markdown</a></h3>
+<p>Introduction to Pandoc, and Pandoc filters.</p>
+<h3 id="entangled-a-bi-directional-literate-programming-tool"><a href="https://blog.esciencecenter.nl/entangled-1744448f4b9f">Entangled, a bi-directional Literate Programming tool</a></h3>
+<p>Presenting Entangled, a tool for pain free literate programming.</p>
 <h2 id="literate-books">Literate Books</h2>
 <p>These are some awesome books written with a literate philosophy in mind.</p>
 <h3 id="pharr-jakob-humphreys---physically-based-rendering"><a href="https://www.pbrt.org/">Pharr, Jakob &amp; Humphreys - Physically Based Rendering</a></h3>
 <div class="book">
 <div class="book-img">
 <figure>
-<img src="img/pbrt.png" alt="" /><figcaption>spheres</figcaption>
+<img src="img/pbrt.png" alt="spheres" /><figcaption>spheres</figcaption>
 </figure>
 </div>
 <div class="book-expl">
@@ -316,7 +321,7 @@
 <div class="book">
 <div class="book-img">
 <figure>
-<img src="img/sicm.jpg" alt="" /><figcaption>sicm</figcaption>
+<img src="img/sicm.jpg" alt="sicm" /><figcaption>sicm</figcaption>
 </figure>
 </div>
 <div class="book-expl">
@@ -327,7 +332,7 @@
 <div class="book">
 <div class="book-img">
 <figure>
-<img src="img/hsom.jpg" alt="" /><figcaption>hsom</figcaption>
+<img src="img/hsom.jpg" alt="hsom" /><figcaption>hsom</figcaption>
 </figure>
 </div>
 <div class="book-expl">
