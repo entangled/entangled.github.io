@@ -1,4 +1,4 @@
 # entangled.github.io
 
-[Entangled homepage](https://entangled.github.io/entangled)
+[Entangled homepage](https://entangled.github.io/)
 
