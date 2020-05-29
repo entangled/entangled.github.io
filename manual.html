@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Entangled</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #eeeeee; background-color: #303030; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #aadfff; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #aaffdf; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #aaffdf; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #aaccef; font-weight: bold; } /* Keyword */
+code span.op { color: #cceeff; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #aaffdf; font-style: italic; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+  </style>
+  <!-- Bootstrap 4.5.0 stylesheet -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/nlesc.css" />
+  <link rel="stylesheet" href="css/code-examples.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<!-- <script data-main="scripts/main" src="js/require.js"></script> -->
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+<!--  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> -->
+
+
+</head>
+<body class="d-flex flex-column">
+
+<nav id="TOC" class="navbar navbar-light">
+<a href="#" class="navbar-brand">Entangled</a>
+<div class="navbar-nav mr-auto w-50">
+<ul>
+<li><a href="#introducion">Introducion</a></li>
+<li><a href="#command-line">Command-line</a></li>
+<li><a href="#configuration">Configuration</a></li>
+</ul>
+</div>
+<span id="logobar">
+<a href="https://github.com/entangled/entangled/"><img src="img/github.png" alt="Octocat" style="height: 20pt"/> Find us on Github</a>
+<a href="https://github.com/entangled/entangled/releases"><img src="img/download.svg" alt="Download" style="height: 20pt"/> Download Entangled</a>
+</span>
+</nav>
+
+<div id="title-bar">
+<div id="title">
+Entangled
+</div>
+<div id="subtitle">
+the manual
+</div>
+</div>
+
+<main role="main" class="flex-fill"><div class="container my-5">
+<h1 id="introducion">Introducion</h1>
+<p>Entangled helps you write Literate Programs in Mardown. You put all your code inside Markdown code blocks. Entangled automatically extracts the code and writes it to more traditional source files. You can then edit these generated files, and the changes are being fed back to the Markdown.</p>
+<div class="doctest" data-status="SUCCESS">
+<div class="doctestInput">
+<div class="annotated-code">
+<p><span><em>«entangled-version»=</em></span></p>
+<div class="sourceCode" id="entangled-version"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-version-1"><a href="#entangled-version-1"></a><span class="ex">entangled</span> --version</span></code></pre></div>
+</div>
+</div>
+<div class="doctestResult">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">Entangled</span> 1.0.0</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span></code></pre></div>
+</div>
+</div>
+<p>We refer to the Markdown files as ‘source’ and the traditional source code as ‘targets’. Just to keep thigs confusing ;).</p>
+<h1 id="command-line">Command-line</h1>
+<p>The entangled command-line tool has several sub-commands.</p>
+<div class="doctest" data-status="SUCCESS">
+<div class="doctestInput">
+<div class="annotated-code">
+<p><span><em>«entangled-help»=</em></span></p>
+<div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> --help</span></code></pre></div>
+</div>
+</div>
+<div class="doctestResult">
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">enTangleD</span> -- daemonised literate programming</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="ex">Usage</span>: entangled [-v<span class="kw">|</span><span class="ex">--version</span>] [-V<span class="kw">|</span><span class="ex">--verbose</span>] [COMMAND]</span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="ex">Automatically</span> tangles and untangles <span class="st">&#39;FILES...&#39;</span>.</span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="ex">Available</span> options:</span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="ex">-v</span>,--version             Show version information.</span>
+<span id="cb2-8"><a href="#cb2-8"></a>  <span class="ex">-V</span>,--verbose             Be very verbose.</span>
+<span id="cb2-9"><a href="#cb2-9"></a>  <span class="ex">-h</span>,--help                Show this help text</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="ex">Available</span> commands:</span>
+<span id="cb2-12"><a href="#cb2-12"></a>  <span class="ex">daemon</span>                   Run the entangled daemon.</span>
+<span id="cb2-13"><a href="#cb2-13"></a>  <span class="ex">config</span>                   Print an example configuration.</span>
+<span id="cb2-14"><a href="#cb2-14"></a>  <span class="ex">insert</span>                   Insert markdown files into database.</span>
+<span id="cb2-15"><a href="#cb2-15"></a>  <span class="ex">tangle</span>                   Retrieve tangled code.</span>
+<span id="cb2-16"><a href="#cb2-16"></a>  <span class="ex">stitch</span>                   Retrieve stitched markdown.</span>
+<span id="cb2-17"><a href="#cb2-17"></a>  <span class="ex">list</span>                     List generated code files.</span>
+<span id="cb2-18"><a href="#cb2-18"></a>  <span class="ex">lint</span>                     Lint input on potential problems.</span>
+<span id="cb2-19"><a href="#cb2-19"></a>  <span class="ex">clear-orphans</span>            Deletes orphan targets.</span></code></pre></div>
+</div>
+</div>
+<p>The command you’ll be using most often is <code>daemon</code>. To understand what the daemon does, it is instructive to first see what the other commands do.</p>
+<h2 id="config">Config</h2>
+<p>The <code>config</code> commands generates a valid configuration file.</p>
+<div class="doctest" data-status="SUCCESS">
+<div class="doctestInput">
+<div class="annotated-code">
+<p><span><em>«entangled-help»+</em></span></p>
+<div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> config --help</span></code></pre></div>
+</div>
+</div>
+<div class="doctestResult">
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">Usage</span>: entangled config [-m<span class="kw">|</span><span class="ex">--minimal</span>]</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="ex">Print</span> an example configuration.</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="ex">Available</span> options:</span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="ex">-m</span>,--minimal             Print minimal config.</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+</div>
+</div>
+<p>The default file is very verbose with lots of explanation and comments. If you are more experienced, you may prefer the minimal file.</p>
+<h2 id="insert">Insert</h2>
+<p>The <code>insert</code> command reads one or more files and inserts them into the database.</p>
+<div class="doctest" data-status="SUCCESS">
+<div class="doctestInput">
+<div class="annotated-code">
+<p><span><em>«entangled-help»+</em></span></p>
+<div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> insert --help</span></code></pre></div>
+</div>
+</div>
+<div class="doctestResult">
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">Usage</span>: entangled insert ((-s<span class="kw">|</span><span class="ex">--source</span>) <span class="kw">|</span> <span class="kw">(</span><span class="ex">-t</span><span class="kw">|</span><span class="ex">--target</span><span class="kw">)</span>) [<span class="ex">FILES...</span>]</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="ex">Insert</span> markdown files into database.</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="ex">Available</span> options:</span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="ex">-s</span>,--source              insert markdown source file</span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="ex">-t</span>,--target              insert target code file</span>
+<span id="cb4-7"><a href="#cb4-7"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+</div>
+</div>
+<p>You need to specify if you want to insert source files (<code>-s|--source</code>) or target files (<code>-t|--target</code>).</p>
+<h2 id="tangle">Tangle</h2>
+<p>The <code>tangle</code> command looks at the code blocks that are present in the database.</p>
+<div class="doctest" data-status="SUCCESS">
+<div class="doctestInput">
+<div class="annotated-code">
+<p><span><em>«entangled-help»+</em></span></p>
+<div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> tangle --help</span></code></pre></div>
+</div>
+</div>
+<div class="doctestResult">
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">Usage</span>: entangled tangle ((-f<span class="kw">|</span><span class="ex">--file</span> TARGET) <span class="kw">|</span> <span class="kw">(</span><span class="ex">-r</span><span class="kw">|</span><span class="ex">--ref</span> TARGET<span class="kw">)</span> <span class="kw">|</span> <span class="kw">(</span><span class="ex">-a</span><span class="kw">|</span><span class="ex">--all</span><span class="kw">)</span>) </span>
+<span id="cb5-2"><a href="#cb5-2"></a>                        [<span class="ex">-d</span><span class="kw">|</span><span class="ex">--decorate</span>]</span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="ex">Retrieve</span> tangled code.</span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="ex">Available</span> options:</span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="ex">-f</span>,--file TARGET         file target</span>
+<span id="cb5-7"><a href="#cb5-7"></a>  <span class="ex">-r</span>,--ref TARGET          reference target</span>
+<span id="cb5-8"><a href="#cb5-8"></a>  <span class="ex">-a</span>,--all                 tangle all and write to disk</span>
+<span id="cb5-9"><a href="#cb5-9"></a>  <span class="ex">-d</span>,--decorate            Decorate with stitching comments.</span>
+<span id="cb5-10"><a href="#cb5-10"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+</div>
+</div>
+<p>You may choose to query any named reference in your code (<code>-r|--ref</code>), or any specified target file (<code>-f|--file</code>). The expanded content of the given reference will be dumped to standard output. If you just want to write out all files to their proper location, use the <code>-a</code> or <code>--all</code> flag.</p>
+<p>TODO: the <code>-d|--decorate</code> flag no longer does anything, since this is managed from the configuration file.</p>
+<h2 id="stitch">Stitch</h2>
+<p>The <code>stitch</code> command extracts from the contents of the database any of the input markdown files. If a target file was changed and inserted, the contents will be different from those on the file system. The result is written to standard output.</p>
+<div class="doctest" data-status="SUCCESS">
+<div class="doctestInput">
+<div class="annotated-code">
+<p><span><em>«entangled-help»+</em></span></p>
+<div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> stitch --help</span></code></pre></div>
+</div>
+</div>
+<div class="doctestResult">
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">Usage</span>: entangled stitch TARGET</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="ex">Retrieve</span> stitched markdown.</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="ex">Available</span> options:</span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+</div>
+</div>
+<p>TODO: implement <code>stitch -a</code></p>
+<h2 id="clear-orphans">Clear orphans</h2>
+<p>The <code>clear-orphans</code> command deletes all orphan target files from the file system. A orphan target arises when a target file reference gets renamed or removed. By using this command, you make sure that these target files do not linger around. When you run the daemon, renaming a file will show up as creation of one target and anihilation of another.</p>
+<div class="doctest" data-status="SUCCESS">
+<div class="doctestInput">
+<div class="annotated-code">
+<p><span><em>«entangled-help»+</em></span></p>
+<div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> clear-orphans --help</span></code></pre></div>
+</div>
+</div>
+<div class="doctestResult">
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="ex">Usage</span>: entangled clear-orphans </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="ex">Deletes</span> orphan targets.</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="ex">Available</span> options:</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+</div>
+</div>
+<h2 id="list">List</h2>
+<p>The <code>list</code> command lists all the target files.</p>
+<div class="doctest" data-status="SUCCESS">
+<div class="doctestInput">
+<div class="annotated-code">
+<p><span><em>«entangled-help»+</em></span></p>
+<div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> list --help</span></code></pre></div>
+</div>
+</div>
+<div class="doctestResult">
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">Usage</span>: entangled list </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="ex">List</span> generated code files.</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="ex">Available</span> options:</span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+</div>
+</div>
+<h2 id="lint">Lint</h2>
+<p>The <code>lint</code> command is an assortment of analytical tools. These all work by querying the database for some information and reporting on it. Not all of these would fall in the realm of what you would call a linter.</p>
+<div class="doctest" data-status="SUCCESS">
+<div class="doctestInput">
+<div class="annotated-code">
+<p><span><em>«entangled-help»+</em></span></p>
+<div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> lint --help</span></code></pre></div>
+</div>
+</div>
+<div class="doctestResult">
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="ex">Usage</span>: entangled lint [LINTERS]</span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="ex">Lint</span> input on potential problems.</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="ex">Available</span> options:</span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+</div>
+</div>
+<p>Currently there are two linters:</p>
+<ul>
+<li><p><code>listUnusedFragments</code> — Generates a list of all code fragments that do not end up in a target file. When this happens, it may indicate a spelling error in the name of a reference, which can lead to confusion.</p></li>
+<li><p><code>dumpToGraphViz</code> — Creates a graph of all references to be visualized with Graphviz, just because we can. Example:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="ex">entangled</span> lint dumpToGraphViz <span class="kw">|</span> <span class="ex">dot</span> -Tsvg -o refs.svg</span></code></pre></div></li>
+</ul>
+<p>TODO: add command to list all available linters</p>
+<h2 id="daemon">Daemon</h2>
+<p>This starts a loop waiting for events on your filesystem. If any of the involved files is written to, the daemon will (effectively) run a set of fixed commands.</p>
+<ul>
+<li><p>In the case a Markdown source gets written to:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="ex">entangled</span> insert -s <span class="op">&lt;</span>changed file<span class="op">&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="ex">entangled</span> tangle -a</span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="ex">entangled</span> clear-orphans</span></code></pre></div></li>
+<li><p>In the case a target file gets written to:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="ex">entangled</span> insert -t <span class="op">&lt;</span>changed file<span class="op">&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="ex">entangled</span> stitch -a</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="ex">entangled</span> tangle -a</span></code></pre></div>
+<p>That last tangle happens because some references inside one file may also be present in other files, or even multiple times in a single file.</p></li>
+</ul>
+<h1 id="configuration">Configuration</h1>
+<p>The Entangled configuration is written in the <a href="https://dhall-lang.org/"><strong>Dhall language</strong></a>. Dhall is very strict when it comes to following a schema, which is completely encoded in its type system. When you run <code>entangled config &gt; entangled.dhall</code>, you’ll get a configuration file that you can edit for greater hapiness. It should start with the following (or similar) lines:</p>
+<div class="annotated-code">
+<p><span><em>«config»=</em></span></p>
+<div class="sourceCode" id="config"><pre class="sourceCode dhall"><code class="sourceCode dhall"><span id="config-1"><a href="#config-1"></a><span class="kw">let</span> entangled <span class="fu">=</span> https<span class="fu">://</span>raw<span class="fu">.</span>githubusercontent<span class="fu">.</span>com<span class="fu">/</span>entangled<span class="fu">/</span>entangled<span class="fu">/</span>v1<span class="fu">.</span><span class="fl">0.0</span><span class="fu">/</span>data<span class="fu">/</span>config<span class="fu">-</span>schema<span class="fu">.</span>dhall</span>
+<span id="config-2"><a href="#config-2"></a>                sha256<span class="fu">:</span>a924fcffa514e3909459e48c45924886062ff4a77be582af0517f9c4bae7ae73</span></code></pre></div>
+</div>
+<p>This imports the schema from the released version on Github. This is cached locally and checked against the hash key for integrity. The Entangled configuration should follow the schema,</p>
+<div class="annotated-code">
+<p><span><em>«schema»=</em></span></p>
+<div class="sourceCode" id="schema"><pre class="sourceCode dhall"><code class="sourceCode dhall"><span id="schema-1"><a href="#schema-1"></a><span class="dt">Config</span> <span class="fu">:</span> { version    <span class="fu">:</span> <span class="dt">Text</span></span>
+<span id="schema-2"><a href="#schema-2"></a>         , languages  <span class="fu">:</span> <span class="dt">List</span> entangled<span class="fu">.</span><span class="dt">Language</span></span>
+<span id="schema-3"><a href="#schema-3"></a>         , watchList  <span class="fu">:</span> <span class="dt">List</span> <span class="dt">Text</span></span>
+<span id="schema-4"><a href="#schema-4"></a>         , database   <span class="fu">:</span> <span class="dt">Optional</span> <span class="dt">Text</span></span>
+<span id="schema-5"><a href="#schema-5"></a>         , annotate   <span class="fu">:</span> entangled<span class="fu">.</span><span class="dt">Annotate</span></span>
+<span id="schema-6"><a href="#schema-6"></a>         , lineDirectives <span class="fu">:</span> <span class="dt">List</span> entangled<span class="fu">.</span><span class="dt">LineDirective</span></span>
+<span id="schema-7"><a href="#schema-7"></a>         , useLineDirectives <span class="fu">:</span> <span class="dt">Bool</span> }</span></code></pre></div>
+</div>
+<p>The <code>version</code> item should never be touched, as it indicates the version of the schema being used. The <code>languages</code> list contains a list of programming languages and their syntax for comments. You can add to this list as follows,</p>
+<div class="annotated-code">
+<p><span><em>«config»+</em></span></p>
+<div class="sourceCode" id="config"><pre class="sourceCode dhall"><code class="sourceCode dhall"><span id="config-1"><a href="#config-1"></a><span class="kw">let</span> languages <span class="fu">=</span> entangled<span class="fu">.</span>languages <span class="fu">#</span></span>
+<span id="config-2"><a href="#config-2"></a>    [ { name <span class="fu">=</span> <span class="st">&quot;Bash&quot;</span>, identifiers <span class="fu">=</span> [<span class="st">&quot;bash&quot;</span>, <span class="st">&quot;sh&quot;</span>], comment <span class="fu">=</span> entangled<span class="fu">.</span>comments<span class="fu">.</span>hash } ]</span></code></pre></div>
+</div>
+<p>The <code>watchList</code> gives the list of files that need to be watched by the daemon. You can use glob patterns here (see: <a href="http://hackage.haskell.org/package/Glob-0.10.0/docs/System-FilePath-Glob.html#v:compile">Hackage:System.FilePath.Glob</a> for the complete supported syntax). A good value would be something like:</p>
+<div class="annotated-code">
+<p><span><em>«config»+</em></span></p>
+<div class="sourceCode" id="config"><pre class="sourceCode dhall"><code class="sourceCode dhall"><span id="config-1"><a href="#config-1"></a><span class="kw">let</span> watchList <span class="fu">=</span> [ <span class="st">&quot;lit/*.md&quot;</span> ]</span></code></pre></div>
+</div>
+<p>The <code>database</code> option should point to the path name of the database file.</p>
+<div class="annotated-code">
+<p><span><em>«config»+</em></span></p>
+<div class="sourceCode" id="config"><pre class="sourceCode dhall"><code class="sourceCode dhall"><span id="config-1"><a href="#config-1"></a><span class="kw">let</span> database <span class="fu">=</span> <span class="dt">Some</span> <span class="st">&quot;.entangled/db.sqlite&quot;</span></span></code></pre></div>
+</div>
+<p>The configuration should always end in a statement starting with the <code>in</code> keyword, indicating the value being represented by the contents of the file.</p>
+<div class="annotated-code">
+<p><span><em>«config»+</em></span></p>
+<div class="sourceCode" id="config"><pre class="sourceCode dhall"><code class="sourceCode dhall"><span id="config-1"><a href="#config-1"></a><span class="kw">in</span> { entangled <span class="fu">=</span> entangled<span class="fu">.</span><span class="dt">Config</span><span class="ot"> ::</span> { database <span class="fu">=</span> database</span>
+<span id="config-2"><a href="#config-2"></a>                                     , watchList <span class="fu">=</span> watchList</span>
+<span id="config-3"><a href="#config-3"></a>                                     , languages <span class="fu">=</span> languages }</span>
+<span id="config-4"><a href="#config-4"></a>   }</span></code></pre></div>
+</div>
+<p>The <code>::</code> operator updates the default values in left-hand side with those in the right-hand side.</p>
+<h2 id="types-of-annotation">Types of annotation</h2>
+<p>The <code>annotate</code> option tells the method of annotation. Currently we support three values:</p>
+<ul>
+<li><code>entangled.Annotate.Naked</code> — No annotation, stitching will not work</li>
+<li><code>entangled.Annotate.Standard</code> — Standard annotation (default)</li>
+<li><code>entangled.Annotate.Project</code> — Includes a <code>project://source.md#42</code> directive in the annotation. This allows some editor plugins to easily jump from the source code to the relevant location in the Markdown. It has a major downside however: with every change line-numbers will change, leading to large commits, and frequent recompiles.</li>
+</ul>
+<h2 id="line-directives">Line directives</h2>
+<p>The <code>lineDirectives</code> option gives a list of line-directive patterns. Some languages have compiler directives to point to original source locations. For example, in C, you can say <code>#LINE 42 "source.md"</code>, and the compiler will know to point the user to line 42 in <code>source.md</code>. Currently included are C, C++ and Haskell, but you can add your own style following the pattern here. You can append on this list using the <code>#</code> operator, the same way as we did with the <code>languages</code> entry.</p>
+<div class="annotated-code">
+<p><span><em>«schema»+</em></span></p>
+<div class="sourceCode" id="schema"><pre class="sourceCode dhall"><code class="sourceCode dhall"><span id="schema-1"><a href="#schema-1"></a><span class="kw">let</span> lineDirectives <span class="fu">=</span></span>
+<span id="schema-2"><a href="#schema-2"></a>    [ { name <span class="fu">=</span> <span class="st">&quot;C&quot;</span>,          format <span class="fu">=</span> <span class="st">&quot;#LINE {linenumber} \&quot;{filename}\&quot;&quot;</span> }</span>
+<span id="schema-3"><a href="#schema-3"></a>    , { name <span class="fu">=</span> <span class="st">&quot;C++&quot;</span>,        format <span class="fu">=</span> <span class="st">&quot;#LINE {linenumber} \&quot;{filename}\&quot;&quot;</span> }</span>
+<span id="schema-4"><a href="#schema-4"></a>    , { name <span class="fu">=</span> <span class="st">&quot;Haskell&quot;</span>,    format <span class="fu">=</span> <span class="st">&quot;{{-# LINE {linenumber} \&quot;{filename}\&quot; #-}}&quot;</span> }</span>
+<span id="schema-5"><a href="#schema-5"></a>    ]</span></code></pre></div>
+</div>
+<p>To use the line directives you need to set the <code>useLineDirectives</code> option to <code>True</code>. Note that this option has the same downside as the <code>Annotate.Project</code> annotation method. Source files will change often, and you will have frequent recompiles.</p>
+</div></main>
+
+<footer class="py-4 footer"><div class="container">
+<a href="https://esciencecenter.nl/"><img src="img/escience_white.png" style="height: 20pt" /></a><br />
+2020-05-29 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
+</div></footer>
+
+
+<!-- Bootstrap 4.5.0 -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<!-- Mathjax -->
+</body>
+</html>

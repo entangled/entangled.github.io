@@ -95,9 +95,10 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <a href="#" class="navbar-brand">Entangled</a>
 <div class="navbar-nav mr-auto w-50">
 <ul>
-<li><a href="#news">News</a></li>
+<li><a href="#about">About</a></li>
 <li><a href="#section-markdown">Get started</a></li>
-<li><a href="#section-entangled">Entangled</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#section-entangled">Installing Entangled</a></li>
 <li><a href="#section-links">External Links</a></li>
 </ul>
 </div>
@@ -121,6 +122,7 @@ literate programming for the new millennium
 <div class="row">
 <div id="synopsis">
 <ul>
+<li>Make your code <strong>look beatiful</strong></li>
 <li>Create <strong>live documents</strong> in Markdown</li>
 <li>Program in <strong>any language</strong> you like</li>
 <li>Use your <strong>favourite editor</strong></li>
@@ -133,7 +135,9 @@ literate programming for the new millennium
 </blockquote>
 </div>
 </div>
-<h1 id="news">News</h1>
+<h1 id="about">About</h1>
+<p>Entangled helps you write Literate Programs in Mardown. You put all your code inside Markdown code blocks. Entangled automatically extracts the code and writes it to more traditional source files. You can then edit these generated files, and the changes are being fed back to the Markdown.</p>
+<h2 id="news">News</h2>
 <ul>
 <li>2020/05/29 — Version 1.0 of Entangled is released!</li>
 <li>2020/05/29 — Version 0.6.1 of <a href="https://entangled.github.io/filters">Entangled filters</a> is released.</li>
@@ -266,15 +270,21 @@ literate programming for the new millennium
 </div>
 </div>
 </div>
-<h2 id="read-more">Read more</h2>
+<h1 id="documentation">Documentation</h1>
 <ul>
-<li><a href="https://entangled.github.io/examples">Examples of literate programs in Entangled</a></li>
-<li><a href="tutorial.html">Setting up a Literate Code project</a></li>
-<li><a href="https://entangled.github.io/bootstrap">Use the Bootstrap 4 template</a> <!-- - [Code Evaluation and Documentation Testing](eval-and-doctest.html) --></li>
+<li><a href="https://entangled.github.io/examples">Example gallery</a></li>
+<li><a href="tutorial.html">Tutorial: setting up a Literate project</a></li>
+<li><a href="manual.html">User Manual</a></li>
 </ul>
-<h1 id="section-entangled">Entangled</h1>
+<h2 id="components">Components</h2>
+<ul>
+<li><a href="https://entangled.github.io/bootstrap">Use the Bootstrap 4 template</a></li>
+<li><a href="https://github.com/entangled/bootstrap-submodule">Bootstrap submodule</a></li>
+<li><a href="https://entangled.github.io/filters">Pandoc filters</a></li>
+</ul>
+<h1 id="section-entangled">Installing Entangled</h1>
 <p>Entangled makes literate programming <strong>easier</strong>. It keeps the markdown and program source in sync. This makes it more convenient to extend and debug your literate code.</p>
-<h3 id="installing-entangled">Installing Entangled</h3>
+<h2 id="entangled-command-line-tool">Entangled command-line tool</h2>
 <p>Entangled is written in Haskell, and can be built on Linux, MacOS and Windows. Currently the best way to install, is to <a href="https://github.com/entangled/entangled">git clone https://github.com/entangled/entangled</a>, and build with GHC ≥ 8.6 using Cabal 3.0. Most GNU/Linux distributions ship an older version of Haskell. The easiest way to install a newer version is through <a href="https://www.haskell.org/ghcup/">GHCUp</a>.</p>
 <p>We are working on better deployment options that don’t depend on compiling from source. If you are hesitant to go through the trouble of installing Haskell, there is a Python module that will let you do most of the things Entangled can do, except the live-updating reverse tangle thing.</p>
 <h2 id="pandoc-filters">Pandoc filters</h2>
@@ -287,7 +297,13 @@ literate programming for the new millennium
 <p>The Python filters act as prototyping platform for features that will be included with Entangled. It is easy to install and has almost no dependencies outside of Pandoc and a recent version of Python (≥ 3.7). This also makes the Python filters very easy to setup on automated builds, like Github Actions.</p>
 <p>Install these filters using:</p>
 <pre><code>    pip install entangled-filters</code></pre>
-<p>More information on these Pandoc filters: <a href="https://github.com/entangled/filters">https://github.com/entangled/filters</a></p>
+<p>More information on Entangled filters: <a href="https://github.com/entangled/filters">https://github.com/entangled/filters</a></p>
+<h2 id="bootstrap-web-template">Bootstrap web template</h2>
+<p>To help you easily create a presentable website from your literate code, we provide a Bootstrap template for Pandoc. Probably the best way to use this template, is to fork <a href="https://github.com/entangled/bootstrap-submodule">our repository at entangled/bootstrap-submodule</a>, and add your fork as a submodule in your project:</p>
+<pre><code>    git submodule add git@github.com:&lt;my bootstrap-submodule fork&gt;</code></pre>
+<p>This way you can tweak the template to your own wishes. If you want to play around first, you can also use the cookiecutter template,</p>
+<pre><code>    cookiecutter https://github.com/entangled/bootstrap</code></pre>
+<p>but this approach is less flexible. For more information, see <a href="tutorial.html">the tutorial</a>.</p>
 <h1 id="section-links">External Links</h1>
 <h3 id="blogs">Blogs</h3>
 <ul>
