@@ -143,6 +143,7 @@ literate programming for the new millennium
 </blockquote>
 <h2 id="news">News</h2>
 <ul>
+<li>2020/06/03 — New release: Entangled v1.0.3 now comes with a prebuild static binary for Linux. Get it here: <a href="https://github.com/entangled/entangled/releases/download/v1.0.3/entangled-1.0.3-x86_64-GNU-Linux.tar.xz">entangled-1.0.3-x86_64-GNU-Linux.tar.xz</a></li>
 <li>2020/06/02 — New example: <a href="https://nlesc-jcer.github.io/cpp2wasm/#/">C++2WASM</a>, a guide to using your C++ code in web applications, by Stefan Verhoeven.</li>
 <li>2020/06/02 — New example: <a href="https://jhidding.github.io/literatept/">LiteratePt</a>, a translation of <a href="https://www.kevinbeason.com/smallpt/">SmallPt</a> into literate Rust.</li>
 <li>2020/05/29 — Version 1.0 of Entangled is released!</li>
@@ -289,18 +290,19 @@ literate programming for the new millennium
 <li><a href="https://entangled.github.io/filters">Pandoc filters</a></li>
 </ul>
 <h1 id="section-entangled">Installing Entangled</h1>
-<p>Entangled makes literate programming <strong>easier</strong>. It keeps the markdown and program source in sync. This makes it more convenient to extend and debug your literate code.</p>
-<h2 id="entangled-command-line-tool">Entangled command-line tool</h2>
+<h2 id="prebuilt-binaries">Prebuilt binaries</h2>
+<p>We provide a prebuilt binary for Linux. The binary is statically compiled, so it should run on any distro. You can download them <a href="https://github.com/entangled/entangled/releases/latest">from the Github releases section</a>. We’re still working on providing binaries for Windows and MacOS.</p>
+<p>If you downloaded the latest tarball, you can install Entangled by copying the contents to <code>~/.local/</code>, or <code>/usr/local</code>. If you prefer an uncluttered <code>local</code> directory, checkout <a href="https://www.gnu.org/software/stow/">GNU Stow</a>.</p>
+<h2 id="from-source">From source</h2>
 <p>Entangled is written in Haskell, and can be built on Linux, MacOS and Windows. Currently the best way to install, is to <a href="https://github.com/entangled/entangled">git clone https://github.com/entangled/entangled</a>, and build with GHC ≥ 8.6 using Cabal 3.0. Most GNU/Linux distributions ship an older version of Haskell. The easiest way to install a newer version is through <a href="https://www.haskell.org/ghcup/">GHCUp</a>.</p>
-<p>We are working on better deployment options that don’t depend on compiling from source. If you are hesitant to go through the trouble of installing Haskell, there is a Python module that will let you do most of the things Entangled can do, except the live-updating reverse tangle thing.</p>
 <h2 id="pandoc-filters">Pandoc filters</h2>
 <p>We have created a set of Python based Pandoc filters that can:</p>
 <ul>
-<li><strong>Tangle</strong> your code</li>
+<li>(forward) <strong>Tangle</strong> your code</li>
 <li>Add <strong>name tags</strong> to rendered output</li>
 <li>Run <strong>documentation tests</strong> through Jupyter</li>
 </ul>
-<p>The Python filters act as prototyping platform for features that will be included with Entangled. It is easy to install and has almost no dependencies outside of Pandoc and a recent version of Python (≥ 3.7). This also makes the Python filters very easy to setup on automated builds, like Github Actions.</p>
+<p>It is easy to install and has almost no dependencies outside of Pandoc and a recent version of Python (≥ 3.7). This also makes the Python filters very easy to setup on automated builds, like Github Actions.</p>
 <p>Install these filters using:</p>
 <pre><code>    pip install entangled-filters</code></pre>
 <p>More information on Entangled filters: <a href="https://github.com/entangled/filters">https://github.com/entangled/filters</a></p>
@@ -391,7 +393,7 @@ literate programming for the new millennium
 
 <footer class="py-4 footer"><div class="container">
 <a href="https://esciencecenter.nl/"><img src="img/escience_white.png" style="height: 20pt" /></a><br />
-2020-06-02 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
+2020-06-03 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
 </div></footer>
 
 
