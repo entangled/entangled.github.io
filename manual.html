@@ -101,8 +101,8 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 </ul>
 </div>
 <span id="logobar">
-<a href="https://github.com/entangled/entangled/"><img src="img/github.png" alt="Octocat" style="height: 20pt"/> Find us on Github</a>
-<a href="https://github.com/entangled/entangled/releases"><img src="img/download.svg" alt="Download" style="height: 20pt"/> Download Entangled</a>
+<a href="https://github.com/entangled/entangled/"><img src="img/github.png" alt="Octocat" style="height: 20pt"/> Github</a>
+<a href="https://github.com/entangled/entangled/releases"><img src="img/download.svg" alt="Download" style="height: 20pt"/> Downloads</a>
 </span>
 </nav>
 
@@ -126,8 +126,7 @@ the manual
 </div>
 </div>
 <div class="doctestResult">
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">Entangled</span> 1.0.0</span>
-<span id="cb1-2"><a href="#cb1-2"></a></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a>1.1.0</span></code></pre></div>
 </div>
 </div>
 <p>We refer to the Markdown files as ‘source’ and the traditional source code as ‘targets’. Just to keep thigs confusing ;).</p>
@@ -141,27 +140,49 @@ the manual
 </div>
 </div>
 <div class="doctestResult">
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">enTangleD</span> -- daemonised literate programming</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1"></a>Entangled -- daemonised literate programming</span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="ex">Usage</span>: entangled [-v<span class="kw">|</span><span class="ex">--version</span>] [-V<span class="kw">|</span><span class="ex">--verbose</span>] [COMMAND]</span>
-<span id="cb2-4"><a href="#cb2-4"></a>  <span class="ex">Automatically</span> tangles and untangles <span class="st">&#39;FILES...&#39;</span>.</span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="ex">Available</span> options:</span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="ex">-v</span>,--version             Show version information.</span>
-<span id="cb2-8"><a href="#cb2-8"></a>  <span class="ex">-V</span>,--verbose             Be very verbose.</span>
-<span id="cb2-9"><a href="#cb2-9"></a>  <span class="ex">-h</span>,--help                Show this help text</span>
-<span id="cb2-10"><a href="#cb2-10"></a></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="ex">Available</span> commands:</span>
-<span id="cb2-12"><a href="#cb2-12"></a>  <span class="ex">daemon</span>                   Run the entangled daemon.</span>
-<span id="cb2-13"><a href="#cb2-13"></a>  <span class="ex">config</span>                   Print an example configuration.</span>
-<span id="cb2-14"><a href="#cb2-14"></a>  <span class="ex">insert</span>                   Insert markdown files into database.</span>
-<span id="cb2-15"><a href="#cb2-15"></a>  <span class="ex">tangle</span>                   Retrieve tangled code.</span>
-<span id="cb2-16"><a href="#cb2-16"></a>  <span class="ex">stitch</span>                   Retrieve stitched markdown.</span>
-<span id="cb2-17"><a href="#cb2-17"></a>  <span class="ex">list</span>                     List generated code files.</span>
-<span id="cb2-18"><a href="#cb2-18"></a>  <span class="ex">lint</span>                     Lint input on potential problems.</span>
-<span id="cb2-19"><a href="#cb2-19"></a>  <span class="ex">clear-orphans</span>            Deletes orphan targets.</span></code></pre></div>
+<span id="cb2-3"><a href="#cb2-3"></a>Usage: entangled [-v|--version] [-V|--verbose] [-m|--machine] [-c|--check] </span>
+<span id="cb2-4"><a href="#cb2-4"></a>                 [COMMAND]</span>
+<span id="cb2-5"><a href="#cb2-5"></a>  Automatically tangles and untangles &#39;FILES...&#39;.</span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a>Available options:</span>
+<span id="cb2-8"><a href="#cb2-8"></a>  -v,--version             Show version information.</span>
+<span id="cb2-9"><a href="#cb2-9"></a>  -V,--verbose             Be very verbose.</span>
+<span id="cb2-10"><a href="#cb2-10"></a>  -m,--machine             Machine readable output.</span>
+<span id="cb2-11"><a href="#cb2-11"></a>  -c,--check               Don&#39;t do anything, returns 1 if changes would be made</span>
+<span id="cb2-12"><a href="#cb2-12"></a>                           to file system.</span>
+<span id="cb2-13"><a href="#cb2-13"></a>  -h,--help                Show this help text</span>
+<span id="cb2-14"><a href="#cb2-14"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a>Available commands:</span>
+<span id="cb2-16"><a href="#cb2-16"></a>  daemon                   Run the entangled daemon.</span>
+<span id="cb2-17"><a href="#cb2-17"></a>  config                   Print an example configuration.</span>
+<span id="cb2-18"><a href="#cb2-18"></a>  insert                   Insert markdown files into database.</span>
+<span id="cb2-19"><a href="#cb2-19"></a>  tangle                   Retrieve tangled code.</span>
+<span id="cb2-20"><a href="#cb2-20"></a>  stitch                   Retrieve stitched markdown.</span>
+<span id="cb2-21"><a href="#cb2-21"></a>  list                     List generated code files.</span>
+<span id="cb2-22"><a href="#cb2-22"></a>  lint                     Lint input on potential problems.</span>
+<span id="cb2-23"><a href="#cb2-23"></a>  clear-orphans            Deletes orphan targets.</span></code></pre></div>
 </div>
 </div>
+<p>There options here are global and may affect the operation of any of the sub-commands. The <code>-m</code> option makes all commands (except <code>daemon</code>) print out information in machine readable format:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>+ filename</code></td>
+<td style="text-align: left;">a file gets created</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>~ filename</code></td>
+<td style="text-align: left;">a file gets modified</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>- filename</code></td>
+<td style="text-align: left;">a file gets deleted</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>-c</code> option doesn’t make changes to the file system, but it prints any action that would be done to <code>stdout</code> in machine readable format. If nothing would happen <code>entangled</code> returns exit code <code>0</code>, otherwise exit code <code>1</code>.</p>
 <p>The command you’ll be using most often is <code>daemon</code>. To understand what the daemon does, it is instructive to first see what the other commands do.</p>
 <h2 id="config">Config</h2>
 <p>The <code>config</code> commands generates a valid configuration file.</p>
@@ -173,12 +194,12 @@ the manual
 </div>
 </div>
 <div class="doctestResult">
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">Usage</span>: entangled config [-m<span class="kw">|</span><span class="ex">--minimal</span>]</span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="ex">Print</span> an example configuration.</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1"></a>Usage: entangled config [-m|--minimal]</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  Print an example configuration.</span>
 <span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="ex">Available</span> options:</span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="ex">-m</span>,--minimal             Print minimal config.</span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+<span id="cb3-4"><a href="#cb3-4"></a>Available options:</span>
+<span id="cb3-5"><a href="#cb3-5"></a>  -m,--minimal             Print minimal config.</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  -h,--help                Show this help text</span></code></pre></div>
 </div>
 </div>
 <p>The default file is very verbose with lots of explanation and comments. If you are more experienced, you may prefer the minimal file.</p>
@@ -192,13 +213,13 @@ the manual
 </div>
 </div>
 <div class="doctestResult">
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">Usage</span>: entangled insert ((-s<span class="kw">|</span><span class="ex">--source</span>) <span class="kw">|</span> <span class="kw">(</span><span class="ex">-t</span><span class="kw">|</span><span class="ex">--target</span><span class="kw">)</span>) [<span class="ex">FILES...</span>]</span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="ex">Insert</span> markdown files into database.</span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1"></a>Usage: entangled insert ((-s|--source) | (-t|--target)) [FILES...]</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  Insert markdown files into database.</span>
 <span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="ex">Available</span> options:</span>
-<span id="cb4-5"><a href="#cb4-5"></a>  <span class="ex">-s</span>,--source              insert markdown source file</span>
-<span id="cb4-6"><a href="#cb4-6"></a>  <span class="ex">-t</span>,--target              insert target code file</span>
-<span id="cb4-7"><a href="#cb4-7"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+<span id="cb4-4"><a href="#cb4-4"></a>Available options:</span>
+<span id="cb4-5"><a href="#cb4-5"></a>  -s,--source              insert markdown source file</span>
+<span id="cb4-6"><a href="#cb4-6"></a>  -t,--target              insert target code file</span>
+<span id="cb4-7"><a href="#cb4-7"></a>  -h,--help                Show this help text</span></code></pre></div>
 </div>
 </div>
 <p>You need to specify if you want to insert source files (<code>-s|--source</code>) or target files (<code>-t|--target</code>).</p>
@@ -212,16 +233,16 @@ the manual
 </div>
 </div>
 <div class="doctestResult">
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">Usage</span>: entangled tangle ((-f<span class="kw">|</span><span class="ex">--file</span> TARGET) <span class="kw">|</span> <span class="kw">(</span><span class="ex">-r</span><span class="kw">|</span><span class="ex">--ref</span> TARGET<span class="kw">)</span> <span class="kw">|</span> <span class="kw">(</span><span class="ex">-a</span><span class="kw">|</span><span class="ex">--all</span><span class="kw">)</span>) </span>
-<span id="cb5-2"><a href="#cb5-2"></a>                        [<span class="ex">-d</span><span class="kw">|</span><span class="ex">--decorate</span>]</span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="ex">Retrieve</span> tangled code.</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1"></a>Usage: entangled tangle ((-f|--file TARGET) | (-r|--ref TARGET) | (-a|--all)) </span>
+<span id="cb5-2"><a href="#cb5-2"></a>                        [-d|--decorate]</span>
+<span id="cb5-3"><a href="#cb5-3"></a>  Retrieve tangled code.</span>
 <span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="ex">Available</span> options:</span>
-<span id="cb5-6"><a href="#cb5-6"></a>  <span class="ex">-f</span>,--file TARGET         file target</span>
-<span id="cb5-7"><a href="#cb5-7"></a>  <span class="ex">-r</span>,--ref TARGET          reference target</span>
-<span id="cb5-8"><a href="#cb5-8"></a>  <span class="ex">-a</span>,--all                 tangle all and write to disk</span>
-<span id="cb5-9"><a href="#cb5-9"></a>  <span class="ex">-d</span>,--decorate            Decorate with stitching comments.</span>
-<span id="cb5-10"><a href="#cb5-10"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+<span id="cb5-5"><a href="#cb5-5"></a>Available options:</span>
+<span id="cb5-6"><a href="#cb5-6"></a>  -f,--file TARGET         file target</span>
+<span id="cb5-7"><a href="#cb5-7"></a>  -r,--ref TARGET          reference target</span>
+<span id="cb5-8"><a href="#cb5-8"></a>  -a,--all                 tangle all and write to disk</span>
+<span id="cb5-9"><a href="#cb5-9"></a>  -d,--decorate            Decorate with stitching comments.</span>
+<span id="cb5-10"><a href="#cb5-10"></a>  -h,--help                Show this help text</span></code></pre></div>
 </div>
 </div>
 <p>You may choose to query any named reference in your code (<code>-r|--ref</code>), or any specified target file (<code>-f|--file</code>). The expanded content of the given reference will be dumped to standard output. If you just want to write out all files to their proper location, use the <code>-a</code> or <code>--all</code> flag.</p>
@@ -236,11 +257,11 @@ the manual
 </div>
 </div>
 <div class="doctestResult">
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">Usage</span>: entangled stitch TARGET</span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="ex">Retrieve</span> stitched markdown.</span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1"></a>Usage: entangled stitch TARGET</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  Retrieve stitched markdown.</span>
 <span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="ex">Available</span> options:</span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+<span id="cb6-4"><a href="#cb6-4"></a>Available options:</span>
+<span id="cb6-5"><a href="#cb6-5"></a>  -h,--help                Show this help text</span></code></pre></div>
 </div>
 </div>
 <p>TODO: implement <code>stitch -a</code></p>
@@ -254,11 +275,11 @@ the manual
 </div>
 </div>
 <div class="doctestResult">
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="ex">Usage</span>: entangled clear-orphans </span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="ex">Deletes</span> orphan targets.</span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1"></a>Usage: entangled clear-orphans </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  Deletes orphan targets.</span>
 <span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="ex">Available</span> options:</span>
-<span id="cb7-5"><a href="#cb7-5"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+<span id="cb7-4"><a href="#cb7-4"></a>Available options:</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  -h,--help                Show this help text</span></code></pre></div>
 </div>
 </div>
 <h2 id="list">List</h2>
@@ -271,11 +292,11 @@ the manual
 </div>
 </div>
 <div class="doctestResult">
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">Usage</span>: entangled list </span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="ex">List</span> generated code files.</span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1"></a>Usage: entangled list </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  List generated code files.</span>
 <span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="ex">Available</span> options:</span>
-<span id="cb8-5"><a href="#cb8-5"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+<span id="cb8-4"><a href="#cb8-4"></a>Available options:</span>
+<span id="cb8-5"><a href="#cb8-5"></a>  -h,--help                Show this help text</span></code></pre></div>
 </div>
 </div>
 <h2 id="lint">Lint</h2>
@@ -288,11 +309,11 @@ the manual
 </div>
 </div>
 <div class="doctestResult">
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="ex">Usage</span>: entangled lint [LINTERS]</span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="ex">Lint</span> input on potential problems.</span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1"></a>Usage: entangled lint [LINTERS]</span>
+<span id="cb9-2"><a href="#cb9-2"></a>  Lint input on potential problems.</span>
 <span id="cb9-3"><a href="#cb9-3"></a></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="ex">Available</span> options:</span>
-<span id="cb9-5"><a href="#cb9-5"></a>  <span class="ex">-h</span>,--help                Show this help text</span></code></pre></div>
+<span id="cb9-4"><a href="#cb9-4"></a>Available options:</span>
+<span id="cb9-5"><a href="#cb9-5"></a>  -h,--help                Show this help text</span></code></pre></div>
 </div>
 </div>
 <p>Currently there are two linters:</p>
@@ -370,8 +391,8 @@ the manual
 <div class="annotated-code">
 <p><span><em>«schema»+</em></span></p>
 <div class="sourceCode" id="schema"><pre class="sourceCode dhall"><code class="sourceCode dhall"><span id="schema-1"><a href="#schema-1"></a><span class="kw">let</span> lineDirectives <span class="fu">=</span></span>
-<span id="schema-2"><a href="#schema-2"></a>    [ { name <span class="fu">=</span> <span class="st">&quot;C&quot;</span>,          format <span class="fu">=</span> <span class="st">&quot;#LINE {linenumber} \&quot;{filename}\&quot;&quot;</span> }</span>
-<span id="schema-3"><a href="#schema-3"></a>    , { name <span class="fu">=</span> <span class="st">&quot;C++&quot;</span>,        format <span class="fu">=</span> <span class="st">&quot;#LINE {linenumber} \&quot;{filename}\&quot;&quot;</span> }</span>
+<span id="schema-2"><a href="#schema-2"></a>    [ { name <span class="fu">=</span> <span class="st">&quot;C&quot;</span>,          format <span class="fu">=</span> <span class="st">&quot;#line {linenumber} \&quot;{filename}\&quot;&quot;</span> }</span>
+<span id="schema-3"><a href="#schema-3"></a>    , { name <span class="fu">=</span> <span class="st">&quot;C++&quot;</span>,        format <span class="fu">=</span> <span class="st">&quot;#line {linenumber} \&quot;{filename}\&quot;&quot;</span> }</span>
 <span id="schema-4"><a href="#schema-4"></a>    , { name <span class="fu">=</span> <span class="st">&quot;Haskell&quot;</span>,    format <span class="fu">=</span> <span class="st">&quot;{{-# LINE {linenumber} \&quot;{filename}\&quot; #-}}&quot;</span> }</span>
 <span id="schema-5"><a href="#schema-5"></a>    ]</span></code></pre></div>
 </div>
@@ -380,7 +401,7 @@ the manual
 
 <footer class="py-4 footer"><div class="container">
 <a href="https://esciencecenter.nl/"><img src="img/escience_white.png" style="height: 20pt" /></a><br />
-2020-05-29 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
+2020-06-05 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
 </div></footer>
 
 
