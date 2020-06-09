@@ -126,7 +126,7 @@ the manual
 </div>
 </div>
 <div class="doctestResult">
-<div class="sourceCode" id="cb1"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a>1.1.0</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a>1.2.3</span></code></pre></div>
 </div>
 </div>
 <p>We refer to the Markdown files as ‘source’ and the traditional source code as ‘targets’. Just to keep thigs confusing ;).</p>
@@ -397,11 +397,23 @@ the manual
 <span id="schema-5"><a href="#schema-5"></a>    ]</span></code></pre></div>
 </div>
 <p>To use the line directives you need to set the <code>useLineDirectives</code> option to <code>True</code>. Note that this option has the same downside as the <code>Annotate.Project</code> annotation method. Source files will change often, and you will have frequent recompiles.</p>
+<h2 id="custom-markdown-syntax-since-version-1.2.0">Custom Markdown Syntax (since version 1.2.0)</h2>
+<p>It may happen that you are working with a Markdown renderer that does not support the standard syntax that Entangled uses. In this case you can configure the syntax that Entangled parses using regular expressions. One instance where this is useful is in building sites with MkDocs (see <a href="https://entangled.github.io/mkdocs">instructions on MkDocs</a>). The following syntax rules can be made to work with MkDocs.</p>
+<div class="annotated-code">
+<p><span><em>«config»+</em></span></p>
+<div class="sourceCode" id="config"><pre class="sourceCode dhall"><code class="sourceCode dhall"><span id="config-1"><a href="#config-1"></a><span class="kw">let</span> syntax <span class="fu">:</span> entangled<span class="fu">.</span><span class="dt">Syntax</span> <span class="fu">=</span></span>
+<span id="config-2"><a href="#config-2"></a>    { matchCodeStart       <span class="fu">=</span> <span class="st">&quot;^[ ]*```[[:alpha:]]+&quot;</span></span>
+<span id="config-3"><a href="#config-3"></a>    , matchCodeEnd         <span class="fu">=</span> <span class="st">&quot;^[ ]*```&quot;</span></span>
+<span id="config-4"><a href="#config-4"></a>    , extractLanguage      <span class="fu">=</span> <span class="st">&quot;```([[:alpha:]]+)&quot;</span></span>
+<span id="config-5"><a href="#config-5"></a>    , extractReferenceName <span class="fu">=</span> <span class="st">&quot;```[[:alpha:]]+[ ]+.*id=\&quot;([^\&quot;]*)\&quot;.*&quot;</span></span>
+<span id="config-6"><a href="#config-6"></a>    , extractFileName      <span class="fu">=</span> <span class="st">&quot;```[[:alpha:]]+[ ]+.*file=\&quot;([^\&quot;]*)\&quot;.*&quot;</span> </span>
+<span id="config-7"><a href="#config-7"></a>    }</span></code></pre></div>
+</div>
 </div></main>
 
 <footer class="py-4 footer"><div class="container">
 <a href="https://esciencecenter.nl/"><img src="img/escience_white.png" style="height: 20pt" /></a><br />
-2020-06-05 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
+2020-06-09 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
 </div></footer>
 
 
