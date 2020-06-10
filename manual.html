@@ -126,7 +126,7 @@ the manual
 </div>
 </div>
 <div class="doctestResult">
-<div class="sourceCode" id="cb1"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a>1.2.3</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a>1.2.4</span></code></pre></div>
 </div>
 </div>
 <p>We refer to the Markdown files as ‘source’ and the traditional source code as ‘targets’. Just to keep thigs confusing ;).</p>
@@ -338,10 +338,17 @@ the manual
 </ul>
 <h1 id="configuration">Configuration</h1>
 <p>The Entangled configuration is written in the <a href="https://dhall-lang.org/"><strong>Dhall language</strong></a>. Dhall is very strict when it comes to following a schema, which is completely encoded in its type system. When you run <code>entangled config &gt; entangled.dhall</code>, you’ll get a configuration file that you can edit for greater hapiness. It should start with the following (or similar) lines:</p>
+<div class="doctest" data-status="SUCCESS">
+<div class="doctestInput">
 <div class="annotated-code">
 <p><span><em>«config»=</em></span></p>
-<div class="sourceCode" id="config"><pre class="sourceCode dhall"><code class="sourceCode dhall"><span id="config-1"><a href="#config-1"></a><span class="kw">let</span> entangled <span class="fu">=</span> https<span class="fu">://</span>raw<span class="fu">.</span>githubusercontent<span class="fu">.</span>com<span class="fu">/</span>entangled<span class="fu">/</span>entangled<span class="fu">/</span>v1<span class="fu">.</span><span class="fl">0.0</span><span class="fu">/</span>data<span class="fu">/</span>config<span class="fu">-</span>schema<span class="fu">.</span>dhall</span>
-<span id="config-2"><a href="#config-2"></a>                sha256<span class="fu">:</span>a924fcffa514e3909459e48c45924886062ff4a77be582af0517f9c4bae7ae73</span></code></pre></div>
+<div class="sourceCode" id="config"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="config-1"><a href="#config-1"></a><span class="ex">entangled</span> config -m <span class="kw">|</span> <span class="fu">head</span> -n2</span></code></pre></div>
+</div>
+</div>
+<div class="doctestResult">
+<div class="sourceCode" id="cb13"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1"></a>let entangled = https://raw.githubusercontent.com/entangled/entangled/v1.2.2/data/config-schema.dhall</span>
+<span id="cb13-2"><a href="#cb13-2"></a>                sha256:9bb4c5649869175ad0b662d292fd81a3d5d9ccb503b1c7e316d531b7856fb096</span></code></pre></div>
+</div>
 </div>
 <p>This imports the schema from the released version on Github. This is cached locally and checked against the hash key for integrity. The Entangled configuration should follow the schema,</p>
 <div class="annotated-code">
@@ -413,7 +420,7 @@ the manual
 
 <footer class="py-4 footer"><div class="container">
 <a href="https://esciencecenter.nl/"><img src="img/escience_white.png" style="height: 20pt" /></a><br />
-2020-06-09 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
+2020-06-10 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
 </div></footer>
 
 
