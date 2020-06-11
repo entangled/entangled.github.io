@@ -98,6 +98,8 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#command-line">Command-line</a></li>
 <li><a href="#configuration">Configuration</a></li>
+<li><a href="#standard-syntax">Standard syntax</a></li>
+<li><a href="#tangle-rules">Tangle rules</a></li>
 </ul>
 </div>
 <span id="logobar">
@@ -386,7 +388,7 @@ the manual
 <span id="config-4"><a href="#config-4"></a>   }</span></code></pre></div>
 </div>
 <p>The <code>::</code> operator updates the default values in left-hand side with those in the right-hand side.</p>
-<h2 id="types-of-annotation">Types of annotation</h2>
+<h2 id="annotation-config">Types of annotation</h2>
 <p>The <code>annotate</code> option tells the method of annotation. Currently we support three values:</p>
 <ul>
 <li><code>entangled.Annotate.Naked</code> — No annotation, stitching will not work</li>
@@ -404,7 +406,7 @@ the manual
 <span id="schema-5"><a href="#schema-5"></a>    ]</span></code></pre></div>
 </div>
 <p>To use the line directives you need to set the <code>useLineDirectives</code> option to <code>True</code>. Note that this option has the same downside as the <code>Annotate.Project</code> annotation method. Source files will change often, and you will have frequent recompiles.</p>
-<h2 id="custom-markdown-syntax-since-version-1.2.0">Custom Markdown Syntax (since version 1.2.0)</h2>
+<h2 id="custom-syntax">Custom Markdown Syntax (since version 1.2.0)</h2>
 <p>It may happen that you are working with a Markdown renderer that does not support the standard syntax that Entangled uses. In this case you can configure the syntax that Entangled parses using regular expressions. One instance where this is useful is in building sites with MkDocs (see <a href="https://entangled.github.io/mkdocs">instructions on MkDocs</a>). The following syntax rules can be made to work with MkDocs.</p>
 <div class="annotated-code">
 <p><span><em>«config»+</em></span></p>
@@ -416,11 +418,65 @@ the manual
 <span id="config-6"><a href="#config-6"></a>    , extractFileName      <span class="fu">=</span> <span class="st">&quot;```[[:alpha:]]+[ ]+.*file=\&quot;([^\&quot;]*)\&quot;.*&quot;</span> </span>
 <span id="config-7"><a href="#config-7"></a>    }</span></code></pre></div>
 </div>
+<h1 id="standard-syntax">Standard syntax</h1>
+<p>The standard syntax is aimed to work well together with Pandoc. Every code block is delimited with three back ticks. Added to the opening line is a sequence of space separated <strong>code properties</strong>. These properties align with the CSS attributes that would end up in the generated HTML. For those unfamiliar with CSS:</p>
+<ul>
+<li><code>#identifier</code>; a name prefixed with a <code>#</code> (sharp), identifies the object, only one of these should be present per item</li>
+<li><code>.class</code>; a name prefixed with <code>.</code> (period), assigns the object to a class, a object can belong to any number of classes</li>
+<li><code>key=value</code>; a name suffixed with <code>=</code> (equals), optionally followed by a value, adds any meta-data attribute to the object</li>
+</ul>
+<p>The complete syntax of a code block then looks like:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a> <span class="bn">``` {[#&lt;reference&gt;|.&lt;language&gt;|&lt;key&gt;=&lt;value&gt;] ...}</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="bn"> &lt;code&gt; ...</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="bn"> ```</span></span></code></pre></div>
+<p>The first class in the code properties is always interpreted to give the <strong>programming language</strong> of the code block. In Entangled, any code block is one of the following:</p>
+<ul>
+<li><p>A <strong>referable</strong> block: has exactly one <strong>reference id</strong> (<code>#&lt;reference&gt;</code>) and one class giving the language of the code block (<code>.&lt;language&gt;</code>). Example:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1"></a><span class="bn">``` {.rust #hello-rust}</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="bn">println!(&quot;Hello, Rust!&quot;);</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="bn">```</span></span></code></pre></div>
+<p>In some cases you may want to have additional classes, for example <code>.bootstrap-fold</code> to enable a folded code block. Always the first class is interpreted to identify the language.</p></li>
+<li><p>A <strong>file</strong> block: has a key-value pair giving the path to the file (<code>file=&lt;path&gt;</code>), absolute or relative to the directory in which <code>entangled</code> runs. Again, there should be one class giving the language of the block (<code>.&lt;language&gt;</code>). Example:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="bn">``` {.rust #main-function file=src/main.rs}</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="bn">fn main() {</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="bn">   &lt;&lt;hello-rust&gt;&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="bn">}</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="bn">```</span></span></code></pre></div>
+<p>The identifier in a file block is optional. If it is left out, the identifier will silently be taken to be the file name.</p></li>
+<li><p>An <strong>ignored</strong> block: anything not matching the previous two.</p></li>
+</ul>
+<h1 id="tangle-rules">Tangle rules</h1>
+<p>Entangled recognizes three parameters for every code block. Since version 1.2 the way these parameters are extracted from an opening line may be <a href="#custom-syntax">configured using regular expressions</a>. Formally, every code block has three properties:</p>
+<ul>
+<li><code>Language</code></li>
+<li><code>Identifier</code></li>
+<li><code>Optional Filename</code></li>
+</ul>
+<p>Entangled should tangle your code following these rules:</p>
+<ol type="1">
+<li><p>If an <strong>identifier</strong> is repeated the contents of the code blocks is concatenated in the order that they appear in the Markdown. If an identifier appears in multiple files, the order is dependent on the order by which the files appear in the configuration, or if they result from a glob-pattern expansion, alphabetical order.</p></li>
+<li><p>Each <strong>target file</strong> is associated to one identifier, the content of which becomes the content of the tangled file. It is illegal to tie a filename to more than one different identifiers. For example, the following input should raise an error:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1"></a><span class="bn">``` {.rust #program file=main.rs}</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="bn">```</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="bn">``` {.rust file=main.rs}</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="bn">```</span></span></code></pre></div>
+<p>Because of the first statement, the file <code>main.rs</code> gets associated with the <code>#program</code> identifier; in the second statement, the file <code>main.rs</code> gets associated with the <code>#main.rs</code> identifier implicitely.</p></li>
+<li><p><strong>Noweb references</strong> are <strong>expanded</strong>. A noweb reference in Entangled should occupy a single line of code by itself, and is enclosed with double angle brackets, and maybe indented with white space. Space at the end of the line is ignored.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb18-1"><a href="#cb18-1"></a>+--- indentation ---+--- reference  ---+--- possible space ---+</span>
+<span id="cb18-2"><a href="#cb18-2"></a>                    &lt;&lt;noweb-reference&gt;&gt;</span></code></pre></div>
+<p>The reference is expanded recursively, after which the indentation is prefixed to every line in the expanded reference content.</p></li>
+<li><p><strong>Annotation</strong>; Expanded and concatenated code blocks are annotated using comment lines. These lines should not be touched when editing the generated files. The default method of annotation follows an opening comment with <code>~\~ begin &lt;&lt;filename|identifier&gt;&gt;[n]</code>, and a closing comment with <code>~\~ end</code>. For example</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb19-1"><a href="#cb19-1"></a><span class="co">// ~\~ begin &lt;&lt;lit/index.md|main&gt;&gt;[1]</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="pp">println!</span>(<span class="st">&quot;hello&quot;</span>);</span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="co">// ~\~ end</span></span></code></pre></div>
+<p>These comments can be configured to also include line numbers (see <a href="#annotation-config">annotation config</a>).</p></li>
+</ol>
 </div></main>
 
 <footer class="py-4 footer"><div class="container">
 <a href="https://esciencecenter.nl/"><img src="img/escience_white.png" style="height: 20pt" /></a><br />
-2020-06-10 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
+2020-06-11 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
 </div></footer>
 
 
