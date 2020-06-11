@@ -127,9 +127,11 @@ tutorial: first steps with Entangled
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">pip</span> install --user cookiecutter</span></code></pre></div>
 <p>Then run</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">cookiecutter</span> https://github.com/entangled/bootstrap</span></code></pre></div>
-<p>This will create a directory in your current working directory with the name that you give cookiecutter. Inside the new directory, run</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">make</span> site   <span class="co"># only needed the first time</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">make</span> watch</span></code></pre></div>
+<p>This will create a directory in your current working directory with the name that you give cookiecutter. Inside the new directory, build the website.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">make</span> site</span></code></pre></div>
+<p>The result will appear in <code>./docs/index.html</code>. Now, make watch</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">make</span> watch</span></code></pre></div>
+<p>and have fun!</p>
 <p>For more information, see <a href="https://entangled.github.io/bootstrap">entangled.github.io/bootstrap</a>.</p>
 <h1 id="from-scratch">From scratch</h1>
 <p>These are the recommended steps to start a project using Entangled. Following these steps will give you a “Hello, World” application with the source code published as a single-page website in the <code>./docs</code> folder of the project.</p>
@@ -148,36 +150,36 @@ tutorial: first steps with Entangled
 </ul>
 <p>In principle <code>inotify-tools</code> is Linux only, but there is <a href="https://github.com/thekid/inotify-win">a Windows port</a>. On Mac, there is <code>fswatch</code> which has a different interface (PR’s welcome).</p></li>
 <li><p>Starting with an empty folder, and initialize version control</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">mkdir</span> project</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="bu">cd</span> project</span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">git</span> init</span></code></pre></div></li>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">mkdir</span> project</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="bu">cd</span> project</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">git</span> init</span></code></pre></div></li>
 <li><p>Clone the Bootstrap template</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">git</span> submodule add git@github.com:entangled/bootstrap-submodule bootstrap</span></code></pre></div></li>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">git</span> submodule add git@github.com:entangled/bootstrap-submodule bootstrap</span></code></pre></div></li>
 <li><p>Create the first Markdown file. I keep Markdown files in one place in a <code>./lit</code> folder. If the project is tiny you could consider putting all your code in <code>README.md</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">mkdir</span> lit</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">cat</span> <span class="op">&gt;</span> lit/index.md <span class="op">&lt;&lt;EOF</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>---</span>
-<span id="cb7-4"><a href="#cb7-4"></a>title: Hello World</span>
-<span id="cb7-5"><a href="#cb7-5"></a>author: Hannah Johnson</span>
-<span id="cb7-6"><a href="#cb7-6"></a>---</span>
-<span id="cb7-7"><a href="#cb7-7"></a></span>
-<span id="cb7-8"><a href="#cb7-8"></a>Literate programming is awesome!</span>
-<span id="cb7-9"><a href="#cb7-9"></a></span>
-<span id="cb7-10"><a href="#cb7-10"></a><span class="dt">\`\`\`</span> {.python #hello-world}</span>
-<span id="cb7-11"><a href="#cb7-11"></a>print(&quot;Hello, World!&quot;)</span>
-<span id="cb7-12"><a href="#cb7-12"></a><span class="dt">\`\`\`</span></span>
-<span id="cb7-13"><a href="#cb7-13"></a><span class="op">EOF</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">mkdir</span> lit</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">cat</span> <span class="op">&gt;</span> lit/index.md <span class="op">&lt;&lt;EOF</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>---</span>
+<span id="cb8-4"><a href="#cb8-4"></a>title: Hello World</span>
+<span id="cb8-5"><a href="#cb8-5"></a>author: Hannah Johnson</span>
+<span id="cb8-6"><a href="#cb8-6"></a>---</span>
+<span id="cb8-7"><a href="#cb8-7"></a></span>
+<span id="cb8-8"><a href="#cb8-8"></a>Literate programming is awesome!</span>
+<span id="cb8-9"><a href="#cb8-9"></a></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="dt">\`\`\`</span> {.python #hello-world}</span>
+<span id="cb8-11"><a href="#cb8-11"></a>print(&quot;Hello, World!&quot;)</span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="dt">\`\`\`</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="op">EOF</span></span></code></pre></div></li>
 <li><p>Create a Makefile (there is an example in the <code>bootstrap-submodule</code> project). Change the <code>input_files</code> variable to the list of your Markdown sources.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">cp</span> bootstrap/Makefile.example Makefile</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="dt">{vim|nano|emacs}</span> <span class="ex">Makefile</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">cp</span> bootstrap/Makefile.example Makefile</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="dt">{vim|nano|emacs}</span> <span class="ex">Makefile</span></span></code></pre></div></li>
 <li><p>Build the website. The result will appear in <code>./docs/index.html</code></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">make</span> site</span></code></pre></div></li>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">make</span> site</span></code></pre></div></li>
 <li><p>Create the <code>entangled.dhall</code> file.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="ex">entangled</span> config <span class="op">&gt;</span> entangled.dhall</span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="dt">{vim|nano|emacs}</span> <span class="ex">entangled.dhall</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="ex">entangled</span> config <span class="op">&gt;</span> entangled.dhall</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="dt">{vim|nano|emacs}</span> <span class="ex">entangled.dhall</span></span></code></pre></div>
 <p>Once you do this more often, you may not want the overly verbose default configuration file. To generate a minimal configuration, run <code>entangled config -m</code> instead.</p></li>
 <li><p>Make watch.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">make</span> watch</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">make</span> watch</span></code></pre></div>
 <p>This last step should start three sub-windows in the terminal:</p>
 <ol type="1">
 <li>Inotify loop to rebuild the website with <code>make site</code></li>
@@ -191,7 +193,7 @@ tutorial: first steps with Entangled
 
 <footer class="py-4 footer"><div class="container">
 Literate Programming made easy by <a href="https://entangled.github.io">Entangled</a>!<br />
-2020-06-10 — version: 1.0.0 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
+2020-06-11 — version: 1.0.0 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
 </div></footer>
 
 
