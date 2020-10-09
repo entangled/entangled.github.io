@@ -120,51 +120,33 @@ the manual
 <main role="main" class="flex-fill"><div class="container my-5">
 <h1 id="introduction">Introduction</h1>
 <p>Entangled helps you write Literate Programs in Mardown. You put all your code inside Markdown code blocks. Entangled automatically extracts the code and writes it to more traditional source files. You can then edit these generated files, and the changes are being fed back to the Markdown.</p>
-<div class="doctest" data-status="SUCCESS">
+<div class="doctest" data-status="ERROR">
 <div class="doctestInput">
 <div class="annotated-code">
 <p><span><em>«entangled-version»=</em></span></p>
 <div class="sourceCode" id="entangled-version"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-version-1"><a href="#entangled-version-1"></a><span class="ex">entangled</span> --version</span></code></pre></div>
 </div>
 </div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb1"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a>1.2.4</span></code></pre></div>
+<div class="doctestError">
+<div class="programOutput">
+<pre class="ansi2html-content"></pre>
+</div>
 </div>
 </div>
 <p>We refer to the Markdown files as ‘source’ and the traditional source code as ‘targets’. Just to keep thigs confusing ;).</p>
 <h1 id="command-line">Command-line</h1>
 <p>The entangled command-line tool has several sub-commands.</p>
-<div class="doctest" data-status="SUCCESS">
+<div class="doctest" data-status="ERROR">
 <div class="doctestInput">
 <div class="annotated-code">
 <p><span><em>«entangled-help»=</em></span></p>
 <div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> --help</span></code></pre></div>
 </div>
 </div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb2"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1"></a>Entangled -- daemonised literate programming</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>Usage: entangled [-v|--version] [-V|--verbose] [-m|--machine] [-c|--check] </span>
-<span id="cb2-4"><a href="#cb2-4"></a>                 [COMMAND]</span>
-<span id="cb2-5"><a href="#cb2-5"></a>  Automatically tangles and untangles &#39;FILES...&#39;.</span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a>Available options:</span>
-<span id="cb2-8"><a href="#cb2-8"></a>  -v,--version             Show version information.</span>
-<span id="cb2-9"><a href="#cb2-9"></a>  -V,--verbose             Be very verbose.</span>
-<span id="cb2-10"><a href="#cb2-10"></a>  -m,--machine             Machine readable output.</span>
-<span id="cb2-11"><a href="#cb2-11"></a>  -c,--check               Don&#39;t do anything, returns 1 if changes would be made</span>
-<span id="cb2-12"><a href="#cb2-12"></a>                           to file system.</span>
-<span id="cb2-13"><a href="#cb2-13"></a>  -h,--help                Show this help text</span>
-<span id="cb2-14"><a href="#cb2-14"></a></span>
-<span id="cb2-15"><a href="#cb2-15"></a>Available commands:</span>
-<span id="cb2-16"><a href="#cb2-16"></a>  daemon                   Run the entangled daemon.</span>
-<span id="cb2-17"><a href="#cb2-17"></a>  config                   Print an example configuration.</span>
-<span id="cb2-18"><a href="#cb2-18"></a>  insert                   Insert markdown files into database.</span>
-<span id="cb2-19"><a href="#cb2-19"></a>  tangle                   Retrieve tangled code.</span>
-<span id="cb2-20"><a href="#cb2-20"></a>  stitch                   Retrieve stitched markdown.</span>
-<span id="cb2-21"><a href="#cb2-21"></a>  list                     List generated code files.</span>
-<span id="cb2-22"><a href="#cb2-22"></a>  lint                     Lint input on potential problems.</span>
-<span id="cb2-23"><a href="#cb2-23"></a>  clear-orphans            Deletes orphan targets.</span></code></pre></div>
+<div class="doctestError">
+<div class="programOutput">
+<pre class="ansi2html-content"></pre>
+</div>
 </div>
 </div>
 <p>There options here are global and may affect the operation of any of the sub-commands. The <code>-m</code> option makes all commands (except <code>daemon</code>) print out information in machine readable format:</p>
@@ -188,168 +170,112 @@ the manual
 <p>The command you’ll be using most often is <code>daemon</code>. To understand what the daemon does, it is instructive to first see what the other commands do.</p>
 <h2 id="config">Config</h2>
 <p>The <code>config</code> commands generates a valid configuration file.</p>
-<div class="doctest" data-status="SUCCESS">
+<div class="doctest" data-status="PENDING">
 <div class="doctestInput">
 <div class="annotated-code">
 <p><span><em>«entangled-help»+</em></span></p>
 <div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> config --help</span></code></pre></div>
 </div>
 </div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb3"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1"></a>Usage: entangled config [-m|--minimal]</span>
-<span id="cb3-2"><a href="#cb3-2"></a>  Print an example configuration.</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a>Available options:</span>
-<span id="cb3-5"><a href="#cb3-5"></a>  -m,--minimal             Print minimal config.</span>
-<span id="cb3-6"><a href="#cb3-6"></a>  -h,--help                Show this help text</span></code></pre></div>
-</div>
 </div>
 <p>The default file is very verbose with lots of explanation and comments. If you are more experienced, you may prefer the minimal file.</p>
 <h2 id="insert">Insert</h2>
 <p>The <code>insert</code> command reads one or more files and inserts them into the database.</p>
-<div class="doctest" data-status="SUCCESS">
+<div class="doctest" data-status="PENDING">
 <div class="doctestInput">
 <div class="annotated-code">
 <p><span><em>«entangled-help»+</em></span></p>
 <div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> insert --help</span></code></pre></div>
 </div>
 </div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb4"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1"></a>Usage: entangled insert ((-s|--source) | (-t|--target)) [FILES...]</span>
-<span id="cb4-2"><a href="#cb4-2"></a>  Insert markdown files into database.</span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a>Available options:</span>
-<span id="cb4-5"><a href="#cb4-5"></a>  -s,--source              insert markdown source file</span>
-<span id="cb4-6"><a href="#cb4-6"></a>  -t,--target              insert target code file</span>
-<span id="cb4-7"><a href="#cb4-7"></a>  -h,--help                Show this help text</span></code></pre></div>
-</div>
 </div>
 <p>You need to specify if you want to insert source files (<code>-s|--source</code>) or target files (<code>-t|--target</code>).</p>
 <h2 id="tangle">Tangle</h2>
 <p>The <code>tangle</code> command looks at the code blocks that are present in the database.</p>
-<div class="doctest" data-status="SUCCESS">
+<div class="doctest" data-status="PENDING">
 <div class="doctestInput">
 <div class="annotated-code">
 <p><span><em>«entangled-help»+</em></span></p>
 <div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> tangle --help</span></code></pre></div>
 </div>
 </div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb5"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1"></a>Usage: entangled tangle ((-f|--file TARGET) | (-r|--ref TARGET) | (-a|--all)) </span>
-<span id="cb5-2"><a href="#cb5-2"></a>                        [-d|--decorate]</span>
-<span id="cb5-3"><a href="#cb5-3"></a>  Retrieve tangled code.</span>
-<span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a>Available options:</span>
-<span id="cb5-6"><a href="#cb5-6"></a>  -f,--file TARGET         file target</span>
-<span id="cb5-7"><a href="#cb5-7"></a>  -r,--ref TARGET          reference target</span>
-<span id="cb5-8"><a href="#cb5-8"></a>  -a,--all                 tangle all and write to disk</span>
-<span id="cb5-9"><a href="#cb5-9"></a>  -d,--decorate            Decorate with stitching comments.</span>
-<span id="cb5-10"><a href="#cb5-10"></a>  -h,--help                Show this help text</span></code></pre></div>
-</div>
 </div>
 <p>You may choose to query any named reference in your code (<code>-r|--ref</code>), or any specified target file (<code>-f|--file</code>). The expanded content of the given reference will be dumped to standard output. If you just want to write out all files to their proper location, use the <code>-a</code> or <code>--all</code> flag.</p>
 <p>TODO: the <code>-d|--decorate</code> flag no longer does anything, since this is managed from the configuration file.</p>
 <h2 id="stitch">Stitch</h2>
 <p>The <code>stitch</code> command extracts from the contents of the database any of the input markdown files. If a target file was changed and inserted, the contents will be different from those on the file system. The result is written to standard output.</p>
-<div class="doctest" data-status="SUCCESS">
+<div class="doctest" data-status="PENDING">
 <div class="doctestInput">
 <div class="annotated-code">
 <p><span><em>«entangled-help»+</em></span></p>
 <div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> stitch --help</span></code></pre></div>
 </div>
 </div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb6"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1"></a>Usage: entangled stitch TARGET</span>
-<span id="cb6-2"><a href="#cb6-2"></a>  Retrieve stitched markdown.</span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a>Available options:</span>
-<span id="cb6-5"><a href="#cb6-5"></a>  -h,--help                Show this help text</span></code></pre></div>
-</div>
 </div>
 <p>TODO: implement <code>stitch -a</code></p>
 <h2 id="clear-orphans">Clear orphans</h2>
 <p>The <code>clear-orphans</code> command deletes all orphan target files from the file system. A orphan target arises when a target file reference gets renamed or removed. By using this command, you make sure that these target files do not linger around. When you run the daemon, renaming a file will show up as creation of one target and anihilation of another.</p>
-<div class="doctest" data-status="SUCCESS">
+<div class="doctest" data-status="PENDING">
 <div class="doctestInput">
 <div class="annotated-code">
 <p><span><em>«entangled-help»+</em></span></p>
 <div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> clear-orphans --help</span></code></pre></div>
 </div>
 </div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb7"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1"></a>Usage: entangled clear-orphans </span>
-<span id="cb7-2"><a href="#cb7-2"></a>  Deletes orphan targets.</span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a>Available options:</span>
-<span id="cb7-5"><a href="#cb7-5"></a>  -h,--help                Show this help text</span></code></pre></div>
-</div>
 </div>
 <h2 id="list">List</h2>
 <p>The <code>list</code> command lists all the target files.</p>
-<div class="doctest" data-status="SUCCESS">
+<div class="doctest" data-status="PENDING">
 <div class="doctestInput">
 <div class="annotated-code">
 <p><span><em>«entangled-help»+</em></span></p>
 <div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> list --help</span></code></pre></div>
 </div>
 </div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb8"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1"></a>Usage: entangled list </span>
-<span id="cb8-2"><a href="#cb8-2"></a>  List generated code files.</span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a>Available options:</span>
-<span id="cb8-5"><a href="#cb8-5"></a>  -h,--help                Show this help text</span></code></pre></div>
-</div>
 </div>
 <h2 id="lint">Lint</h2>
 <p>The <code>lint</code> command is an assortment of analytical tools. These all work by querying the database for some information and reporting on it. Not all of these would fall in the realm of what you would call a linter.</p>
-<div class="doctest" data-status="SUCCESS">
+<div class="doctest" data-status="PENDING">
 <div class="doctestInput">
 <div class="annotated-code">
 <p><span><em>«entangled-help»+</em></span></p>
 <div class="sourceCode" id="entangled-help"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-help-1"><a href="#entangled-help-1"></a><span class="ex">entangled</span> lint --help</span></code></pre></div>
 </div>
 </div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb9"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1"></a>Usage: entangled lint [LINTERS]</span>
-<span id="cb9-2"><a href="#cb9-2"></a>  Lint input on potential problems.</span>
-<span id="cb9-3"><a href="#cb9-3"></a></span>
-<span id="cb9-4"><a href="#cb9-4"></a>Available options:</span>
-<span id="cb9-5"><a href="#cb9-5"></a>  -h,--help                Show this help text</span></code></pre></div>
-</div>
 </div>
 <p>Currently there are two linters:</p>
 <ul>
 <li><p><code>listUnusedFragments</code> — Generates a list of all code fragments that do not end up in a target file. When this happens, it may indicate a spelling error in the name of a reference, which can lead to confusion.</p></li>
 <li><p><code>dumpToGraphViz</code> — Creates a graph of all references to be visualized with Graphviz, just because we can. Example:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="ex">entangled</span> lint dumpToGraphViz <span class="kw">|</span> <span class="ex">dot</span> -Tsvg -o refs.svg</span></code></pre></div></li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">entangled</span> lint dumpToGraphViz <span class="kw">|</span> <span class="ex">dot</span> -Tsvg -o refs.svg</span></code></pre></div></li>
 </ul>
 <p>TODO: add command to list all available linters</p>
 <h2 id="daemon">Daemon</h2>
 <p>This starts a loop waiting for events on your filesystem. If any of the involved files is written to, the daemon will (effectively) run a set of fixed commands.</p>
 <ul>
 <li><p>In the case a Markdown source gets written to:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="ex">entangled</span> insert -s <span class="op">&lt;</span>changed file<span class="op">&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="ex">entangled</span> tangle -a</span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="ex">entangled</span> clear-orphans</span></code></pre></div></li>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">entangled</span> insert -s <span class="op">&lt;</span>changed file<span class="op">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="ex">entangled</span> tangle -a</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="ex">entangled</span> clear-orphans</span></code></pre></div></li>
 <li><p>In the case a target file gets written to:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="ex">entangled</span> insert -t <span class="op">&lt;</span>changed file<span class="op">&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="ex">entangled</span> stitch -a</span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="ex">entangled</span> tangle -a</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">entangled</span> insert -t <span class="op">&lt;</span>changed file<span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">entangled</span> stitch -a</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="ex">entangled</span> tangle -a</span></code></pre></div>
 <p>That last tangle happens because some references inside one file may also be present in other files, or even multiple times in a single file.</p></li>
 </ul>
 <h1 id="configuration">Configuration</h1>
 <p>The Entangled configuration is written in the <a href="https://dhall-lang.org/"><strong>Dhall language</strong></a>. Dhall is very strict when it comes to following a schema, which is completely encoded in its type system. When you run <code>entangled config &gt; entangled.dhall</code>, you’ll get a configuration file that you can edit for greater hapiness. It should start with the following (or similar) lines:</p>
-<div class="doctest" data-status="SUCCESS">
+<div class="doctest" data-status="ERROR">
 <div class="doctestInput">
 <div class="annotated-code">
 <p><span><em>«config»=</em></span></p>
 <div class="sourceCode" id="config"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="config-1"><a href="#config-1"></a><span class="ex">entangled</span> config -m <span class="kw">|</span> <span class="fu">head</span> -n2</span></code></pre></div>
 </div>
 </div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb13"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1"></a>let entangled = https://raw.githubusercontent.com/entangled/entangled/v1.2.2/data/config-schema.dhall</span>
-<span id="cb13-2"><a href="#cb13-2"></a>                sha256:9bb4c5649869175ad0b662d292fd81a3d5d9ccb503b1c7e316d531b7856fb096</span></code></pre></div>
+<div class="doctestError">
+<div class="programOutput">
+<pre class="ansi2html-content"></pre>
+</div>
 </div>
 </div>
 <p>This imports the schema from the released version on Github. This is cached locally and checked against the hash key for integrity. The Entangled configuration should follow the schema,</p>
@@ -418,6 +344,7 @@ the manual
 <span id="config-6"><a href="#config-6"></a>    , extractFileName      <span class="fu">=</span> <span class="st">&quot;```[[:alpha:]]+[ ]+.*file=\&quot;([^\&quot;]*)\&quot;.*&quot;</span> </span>
 <span id="config-7"><a href="#config-7"></a>    }</span></code></pre></div>
 </div>
+<p>Note that all expressions used to extract part of the line (e.g. <code>extractLanguage</code> and relatives) <strong>must have exactly one subexpression</strong>.</p>
 <h1 id="standard-syntax">Standard syntax</h1>
 <p>The standard syntax is aimed to work well together with Pandoc. Every code block is delimited with three back ticks. Added to the opening line is a sequence of space separated <strong>code properties</strong>. These properties align with the CSS attributes that would end up in the generated HTML. For those unfamiliar with CSS:</p>
 <ul>
@@ -426,22 +353,22 @@ the manual
 <li><code>key=value</code>; a name suffixed with <code>=</code> (equals), optionally followed by a value, adds any meta-data attribute to the object</li>
 </ul>
 <p>The complete syntax of a code block then looks like:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a> <span class="bn">``` {[#&lt;reference&gt;|.&lt;language&gt;|&lt;key&gt;=&lt;value&gt;] ...}</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="bn"> &lt;code&gt; ...</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="bn"> ```</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a> <span class="bn">``` {[#&lt;reference&gt;|.&lt;language&gt;|&lt;key&gt;=&lt;value&gt;] ...}</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="bn"> &lt;code&gt; ...</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="bn"> ```</span></span></code></pre></div>
 <p>The first class in the code properties is always interpreted to give the <strong>programming language</strong> of the code block. In Entangled, any code block is one of the following:</p>
 <ul>
 <li><p>A <strong>referable</strong> block: has exactly one <strong>reference id</strong> (<code>#&lt;reference&gt;</code>) and one class giving the language of the code block (<code>.&lt;language&gt;</code>). Example:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1"></a><span class="bn">``` {.rust #hello-rust}</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="bn">println!(&quot;Hello, Rust!&quot;);</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="bn">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="bn">``` {.rust #hello-rust}</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="bn">println!(&quot;Hello, Rust!&quot;);</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="bn">```</span></span></code></pre></div>
 <p>In some cases you may want to have additional classes, for example <code>.bootstrap-fold</code> to enable a folded code block. Always the first class is interpreted to identify the language.</p></li>
 <li><p>A <strong>file</strong> block: has a key-value pair giving the path to the file (<code>file=&lt;path&gt;</code>), absolute or relative to the directory in which <code>entangled</code> runs. Again, there should be one class giving the language of the block (<code>.&lt;language&gt;</code>). Example:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="bn">``` {.rust #main-function file=src/main.rs}</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="bn">fn main() {</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="bn">   &lt;&lt;hello-rust&gt;&gt;</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="bn">}</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a><span class="bn">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="bn">``` {.rust #main-function file=src/main.rs}</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="bn">fn main() {</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="bn">   &lt;&lt;hello-rust&gt;&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="bn">}</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="bn">```</span></span></code></pre></div>
 <p>The identifier in a file block is optional. If it is left out, the identifier will silently be taken to be the file name.</p></li>
 <li><p>An <strong>ignored</strong> block: anything not matching the previous two.</p></li>
 </ul>
@@ -456,27 +383,27 @@ the manual
 <ol type="1">
 <li><p>If an <strong>identifier</strong> is repeated the contents of the code blocks is concatenated in the order that they appear in the Markdown. If an identifier appears in multiple files, the order is dependent on the order by which the files appear in the configuration, or if they result from a glob-pattern expansion, alphabetical order.</p></li>
 <li><p>Each <strong>target file</strong> is associated to one identifier, the content of which becomes the content of the tangled file. It is illegal to tie a filename to more than one different identifiers. For example, the following input should raise an error:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1"></a><span class="bn">``` {.rust #program file=main.rs}</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="bn">```</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a></span>
-<span id="cb17-4"><a href="#cb17-4"></a><span class="bn">``` {.rust file=main.rs}</span></span>
-<span id="cb17-5"><a href="#cb17-5"></a><span class="bn">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="bn">``` {.rust #program file=main.rs}</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="bn">```</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="bn">``` {.rust file=main.rs}</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="bn">```</span></span></code></pre></div>
 <p>Because of the first statement, the file <code>main.rs</code> gets associated with the <code>#program</code> identifier; in the second statement, the file <code>main.rs</code> gets associated with the <code>#main.rs</code> identifier implicitely.</p></li>
 <li><p><strong>Noweb references</strong> are <strong>expanded</strong>. A noweb reference in Entangled should occupy a single line of code by itself, and is enclosed with double angle brackets, and maybe indented with white space. Space at the end of the line is ignored.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb18-1"><a href="#cb18-1"></a>+--- indentation ---+--- reference  ---+--- possible space ---+</span>
-<span id="cb18-2"><a href="#cb18-2"></a>                    &lt;&lt;noweb-reference&gt;&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1"></a>+--- indentation ---+--- reference  ---+--- possible space ---+</span>
+<span id="cb8-2"><a href="#cb8-2"></a>                    &lt;&lt;noweb-reference&gt;&gt;</span></code></pre></div>
 <p>The reference is expanded recursively, after which the indentation is prefixed to every line in the expanded reference content.</p></li>
 <li><p><strong>Annotation</strong>; Expanded and concatenated code blocks are annotated using comment lines. These lines should not be touched when editing the generated files. The default method of annotation follows an opening comment with <code>~\~ begin &lt;&lt;filename|identifier&gt;&gt;[n]</code>, and a closing comment with <code>~\~ end</code>. For example</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb19-1"><a href="#cb19-1"></a><span class="co">// ~\~ begin &lt;&lt;lit/index.md|main&gt;&gt;[1]</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="pp">println!</span>(<span class="st">&quot;hello&quot;</span>);</span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="co">// ~\~ end</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">// ~\~ begin &lt;&lt;lit/index.md|main&gt;&gt;[1]</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="pp">println!</span>(<span class="st">&quot;hello&quot;</span>);</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="co">// ~\~ end</span></span></code></pre></div>
 <p>These comments can be configured to also include line numbers (see <a href="#annotation-config">annotation config</a>).</p></li>
 </ol>
 </div></main>
 
 <footer class="py-4 footer"><div class="container">
 <a href="https://esciencecenter.nl/"><img src="img/escience_white.png" style="height: 20pt" /></a><br />
-2020-06-11 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
+2020-10-09 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
 </div></footer>
 
 
