@@ -15,6 +15,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -95,14 +96,15 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <a href="#" class="navbar-brand">Entangled</a>
 <div class="navbar-nav mr-auto w-50">
 <ul>
-<li><a href="#installing-entangled">Installing Entangled</a></li>
-<li><a href="#using-cookiecutter">Using Cookiecutter</a></li>
-<li><a href="#from-scratch">From scratch</a></li>
+<li><a href="#installing-entangled"
+id="toc-installing-entangled">Installing Entangled</a></li>
+<li><a href="#setting-up-a-project"
+id="toc-setting-up-a-project">Setting up a project</a></li>
 </ul>
 </div>
 <span id="logobar">
-<a href="https://github.com/entangled/entangled/"><img src="img/github.png" alt="Octocat" style="height: 20pt"/> Github</a>
-<a href="https://github.com/entangled/entangled/releases"><img src="img/download.svg" alt="Download" style="height: 20pt"/> Downloads</a>
+<a href="https://github.com/entangled/entangled.py/"><img src="img/github.png" alt="Octocat" style="height: 20pt"/> Github</a>
+<a href="https://github.com/entangled/entangled.py/releases"><img src="img/download.svg" alt="Download" style="height: 20pt"/> Downloads</a>
 </span>
 </nav>
 
@@ -117,83 +119,46 @@ tutorial: first steps with Entangled
 
 <main role="main" class="flex-fill"><div class="container my-5">
 <h1 id="installing-entangled">Installing Entangled</h1>
-<p>To install Entangled, for the moment you’ll have to compile from source. The easiest way to install Haskell is through <a href="https://www.haskell.org/ghcup/">GHCUp</a>. We recommend you use GHC version 8.8.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">git</span> clone https://github.com/entangled/entangled.git</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">cd</span> entangled</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="ex">cabal</span> build</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="ex">cabal</span> install</span></code></pre></div>
-<h1 id="using-cookiecutter">Using Cookiecutter</h1>
-<p>This has the same prerequisites as listed below. In addition, make sure you have Cookiecutter installed</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">pip</span> install --user cookiecutter</span></code></pre></div>
-<p>Then run</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">cookiecutter</span> https://github.com/entangled/bootstrap</span></code></pre></div>
-<p>This will create a directory in your current working directory with the name that you give cookiecutter. Inside the new directory, build the website.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">make</span> site</span></code></pre></div>
-<p>The result will appear in <code>./docs/index.html</code>. Now, make watch</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">make</span> watch</span></code></pre></div>
-<p>and have fun!</p>
-<p>For more information, see <a href="https://entangled.github.io/bootstrap">entangled.github.io/bootstrap</a>.</p>
-<h1 id="from-scratch">From scratch</h1>
-<p>These are the recommended steps to start a project using Entangled. Following these steps will give you a “Hello, World” application with the source code published as a single-page website in the <code>./docs</code> folder of the project.</p>
-<ol start="0" type="1">
-<li><p>Install prerequisites</p>
-<ul>
-<li>Python</li>
-<li>NodeJS</li>
-<li>Pandoc (<a href="https://pandoc.org/MANUAL.html">Pandoc documentation</a>)</li>
-<li>Entangled</li>
-<li><code>inotify-tools</code></li>
-<li><code>tmux</code></li>
-<li>Dhall, <code>dhall-to-json</code> (see <a href="https://docs.dhall-lang.org/tutorials/Getting-started_Generate-JSON-or-YAML.html">Dhall JSON tutorial</a>)</li>
-<li>Entangled filters (<code>pip install --user entangled-filters</code>)</li>
-<li>BrowserSync (<code>npm install -g browser-sync</code>)</li>
-</ul>
-<p>In principle <code>inotify-tools</code> is Linux only, but there is <a href="https://github.com/thekid/inotify-win">a Windows port</a>. On Mac, there is <code>fswatch</code> which has a different interface (PR’s welcome).</p></li>
-<li><p>Starting with an empty folder, and initialize version control</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">mkdir</span> project</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="bu">cd</span> project</span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">git</span> init</span></code></pre></div></li>
-<li><p>Clone the Bootstrap template</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">git</span> submodule add git@github.com:entangled/bootstrap-submodule bootstrap</span></code></pre></div></li>
-<li><p>Create the first Markdown file. I keep Markdown files in one place in a <code>./lit</code> folder. If the project is tiny you could consider putting all your code in <code>README.md</code>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">mkdir</span> lit</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">cat</span> <span class="op">&gt;</span> lit/index.md <span class="op">&lt;&lt;EOF</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>---</span>
-<span id="cb8-4"><a href="#cb8-4"></a>title: Hello World</span>
-<span id="cb8-5"><a href="#cb8-5"></a>author: Hannah Johnson</span>
-<span id="cb8-6"><a href="#cb8-6"></a>---</span>
-<span id="cb8-7"><a href="#cb8-7"></a></span>
-<span id="cb8-8"><a href="#cb8-8"></a>Literate programming is awesome!</span>
-<span id="cb8-9"><a href="#cb8-9"></a></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="dt">\`\`\`</span> {.python #hello-world}</span>
-<span id="cb8-11"><a href="#cb8-11"></a>print(&quot;Hello, World!&quot;)</span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="dt">\`\`\`</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a><span class="op">EOF</span></span></code></pre></div></li>
-<li><p>Create a Makefile (there is an example in the <code>bootstrap-submodule</code> project). Change the <code>input_files</code> variable to the list of your Markdown sources.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">cp</span> bootstrap/Makefile.example Makefile</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="dt">{vim|nano|emacs}</span> <span class="ex">Makefile</span></span></code></pre></div></li>
-<li><p>Build the website. The result will appear in <code>./docs/index.html</code></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">make</span> site</span></code></pre></div></li>
-<li><p>Create the <code>entangled.dhall</code> file.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="ex">entangled</span> config <span class="op">&gt;</span> entangled.dhall</span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="dt">{vim|nano|emacs}</span> <span class="ex">entangled.dhall</span></span></code></pre></div>
-<p>Once you do this more often, you may not want the overly verbose default configuration file. To generate a minimal configuration, run <code>entangled config -m</code> instead.</p></li>
-<li><p>Make watch.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">make</span> watch</span></code></pre></div>
-<p>This last step should start three sub-windows in the terminal:</p>
-<ol type="1">
-<li>Inotify loop to rebuild the website with <code>make site</code></li>
-<li>Browser-sync to automatically reload the page in your browser</li>
-<li>Entangled to keep Markdown and program code in sync</li>
-</ol>
-<p>Have fun!</p></li>
-<li><p>Pro tip: check out the <a href="https://pandoc.org/MANUAL.html#templates">Pandoc documentation on templates</a>, and play around with <code>template.html</code> and <code>mods.css</code>. Create a fork of the <code>bootstrap-submodule</code> repository to save your settings.</p></li>
-</ol>
+<p>Install Entangled by running</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install entangled_cli<span class="pp">[</span><span class="ss">rich</span><span class="pp">]</span></span></code></pre></div>
+<p>This will install Entangled in your global user environment for
+Python (or <code>base</code> if you use Conda). Since Entangled is a
+tool which you might use in many projects that are not related to Python
+it can make less sense to install Entangled in a virtual environment. If
+you do use Python in more places, it might be advisable to use a virtual
+environment, or even better, use poetry.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assuming you did run `poetry init`</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> add <span class="at">--group</span><span class="op">=</span>dev entangled_cli<span class="pp">[</span><span class="ss">rich</span><span class="pp">]</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> shell</span></code></pre></div>
+<p>Now that you have Entangled installed, you need to choose a
+<em>document generator</em>. Depending on your needs we advise either <a
+href="https://www.mkdocs.org/">MkDocs</a> or <a
+href="https://www.pandoc.org">Pandoc</a>. Nothing is stopping you from
+choosing another tool, as long as this tool supports the needed Markdown
+extensions.</p>
+<h1 id="setting-up-a-project">Setting up a project</h1>
+<h2 id="using-cookiecutter">Using Cookiecutter</h2>
+<p>The Cookiecutter templates are being worked on at the moment. Please
+be patient.</p>
+<h2 id="mkdocs">MkDocs</h2>
+<p>There is a dedicated plugin for using Entangled with MkDocs called
+<code>mkdocs-entangled-plugin</code>. You can install it using</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install mkdocs mkdocs-material mkdocs-entangled-plugin</span></code></pre></div>
+<p>(or <code>poetry add --group=dev ...</code> if you prefer).</p>
+<p>The documentation, including setup instructions, for MkDocs with
+Entangled can be found at <a
+href="https://entangled.github.io/mkdocs-plugin">entangled.github.io/mkdocs-plugin</a>.</p>
+<h2 id="pandoc">Pandoc</h2>
+<p>Pandoc can be a bit harder to setup than MkDocs, but once you get the
+hang of it, Pandoc is much easier to extend.</p>
 </div></main>
 
 <footer class="py-4 footer"><div class="container">
-Literate Programming made easy by <a href="https://entangled.github.io">Entangled</a>!<br />
-2020-06-11 — version: 1.0.0 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
+<a href="https://esciencecenter.nl/"><img src="img/escience_white.png"
+style="height: 20pt" /></a>
 </div></footer>
 
 

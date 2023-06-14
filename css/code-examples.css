@@ -1,5 +1,4 @@
-/* ~\~ language=CSS filename=docs/css/code-examples.css */
-/* ~\~ begin <<lit/doctheme.md|docs/css/code-examples.css>>[0] */
+/* ~/~ begin <<lit/doctheme.md#docs/css/code-examples.css>>[init] */
 @import url('https://fonts.googleapis.com/css?family=Niramit:300,300i&display=swap');
 
 body {
@@ -225,4 +224,4 @@ h4 {
         width: 75%;
     }
 }
-/* ~\~ end */
+/* ~/~ end */
