@@ -15,6 +15,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -95,16 +96,19 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <a href="#" class="navbar-brand">Entangled</a>
 <div class="navbar-nav mr-auto w-50">
 <ul>
-<li><a href="#about">About</a></li>
-<li><a href="#section-markdown">Get started</a></li>
-<li><a href="#documentation">Documentation</a></li>
-<li><a href="#section-entangled">Installing Entangled</a></li>
-<li><a href="#section-links">External Links</a></li>
+<li><a href="#about" id="toc-about">About</a></li>
+<li><a href="#get-started" id="toc-get-started">Get Started</a></li>
+<li><a href="#section-markdown" id="toc-section-markdown">Write
+Markdown</a></li>
+<li><a href="#documentation"
+id="toc-documentation">Documentation</a></li>
+<li><a href="#section-links" id="toc-section-links">External
+Links</a></li>
 </ul>
 </div>
 <span id="logobar">
-<a href="https://github.com/entangled/entangled/"><img src="img/github.png" alt="Octocat" style="height: 20pt"/> Github</a>
-<a href="https://github.com/entangled/entangled/releases"><img src="img/download.svg" alt="Download" style="height: 20pt"/> Downloads</a>
+<a href="https://github.com/entangled/entangled.py/"><img src="img/github.png" alt="Octocat" style="height: 20pt"/> Github</a>
+<a href="https://github.com/entangled/entangled.py/releases"><img src="img/download.svg" alt="Download" style="height: 20pt"/> Downloads</a>
 </span>
 </nav>
 
@@ -122,251 +126,266 @@ literate programming for the new millennium
 <div class="row">
 <div id="synopsis">
 <ul>
-<li>Make your code <strong>look beatiful</strong></li>
+<li><strong>Literate Programming</strong> made easy</li>
 <li>Create <strong>live documents</strong> in Markdown</li>
 <li>Program in <strong>any language</strong> you like</li>
-<li>Use your <strong>favourite editor</strong></li>
+<li>Use your <strong>favourite editor/IDE</strong></li>
 <li>Works well with <strong>version control</strong></li>
-<li>Powered by <strong>Pandoc</strong></li>
 </ul>
 </div>
 <blockquote>
-<p><strong>Literate programming</strong> <span class="phonetic">/ˈlɪtəɹət ˈpɹəʊɡɹæmɪŋ/</span> (computing) Literate programming is a programming paradigm introduced by Donald Knuth in which a program is given as an explanation of the program logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which a compilable source code can be generated. <a href="https://en.wikipedia.org/wiki/Literate_programming">Wikipedia</a></p>
+<p><strong>Literate programming</strong> <span
+class="phonetic">/ˈlɪtəɹət ˈpɹəʊɡɹæmɪŋ/</span> (computing) Literate
+programming is a programming paradigm introduced by Donald Knuth in
+which a program is given as an explanation of the program logic in a
+natural language, such as English, interspersed with snippets of macros
+and traditional source code, from which a compilable source code can be
+generated. <a
+href="https://en.wikipedia.org/wiki/Literate_programming">Wikipedia</a></p>
 </blockquote>
 </div>
 </div>
+<script async id="asciicast-591533" src="https://asciinema.org/a/591533.js" data-autoplay="true" data-speed="2"></script>
 <h1 id="about">About</h1>
-<p>Entangled helps you write Literate Programs in Mardown. You put all your code inside Markdown code blocks. Entangled automatically extracts the code and writes it to more traditional source files. You can then edit these generated files, and the changes are being fed back to the Markdown.</p>
-<p>We’re trying to increase the visibility of Entangled. If you like Entangled, please consider adding this badge <a href="https://entangled.github.io/"><img src="https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff" alt="Entangled badge" /></a> to the appropriate location in your project:</p>
+<p>Entangled helps you write Literate Programs in Markdown. You put all
+your code inside Markdown code blocks. Entangled automatically extracts
+the code and writes it to more traditional source files. You can then
+edit these generated files, and the changes are being fed back to the
+Markdown.</p>
+<p>We’re trying to increase the visibility of Entangled. If you like
+Entangled, please consider adding this badge <a
+href="https://entangled.github.io/"><img
+src="https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff"
+alt="Entangled badge" /></a> to the appropriate location in your
+project:</p>
 <blockquote>
 <pre><code>[![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)</code></pre>
 </blockquote>
-<h1 id="section-markdown">Get started</h1>
+<h1 id="get-started">Get Started</h1>
+<p>With the 2.0 release, Entangled is now available as a Python package,
+installable through <code>pip</code>,</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install entangled_cli<span class="pp">[</span><span class="ss">rich</span><span class="pp">]</span></span></code></pre></div>
+<p>This installs the <code>entangled</code> executable. The
+<code>[rich]</code> component is optional, but makes the output logs of
+Entangled slightly nicer to read.</p>
+<h1 id="section-markdown">Write Markdown</h1>
 <blockquote>
-<p>“A critical aspect of a programming language is the means it provides for using names to refer to computational objects.” <a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">Abelson, Sussman &amp; Sussman - SICP</a></p>
+<p>“A critical aspect of a programming language is the means it provides
+for using names to refer to computational objects.” <a
+href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">Abelson,
+Sussman &amp; Sussman - SICP</a></p>
 </blockquote>
 <h4 id="name-your-code">Name your code</h4>
 <div class="example">
 <div class="given-input">
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a> The square of the hypothenuse is the sum</span>
-<span id="cb2-2"><a href="#cb2-2"></a> of the two right-angled sides squared:</span>
-<span id="cb2-3"><a href="#cb2-3"></a> $$a^2 + b^2 = c^2$$</span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a> <span class="bn">``` {.python #pythagoras}</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="bn"> def vector_length(x, y):</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="bn">     return sqrt(x**2 + y**2)</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="bn"> ```</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a> The square of the hypothenuse is the sum</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a> of the two right-angled sides squared:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a> $$a^2 + b^2 = c^2$$</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> <span class="in">``` {.python #pythagoras}</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="in"> def vector_length(x, y):</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="in">     return sqrt(x**2 + y**2)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="in"> ```</span></span></code></pre></div>
 </div>
 <div class="generated-output">
-<p>The square of the hypothenuse is the sum of the two right-angled sides squared: <span class="math display">\[a^2 + b^2 = c^2\]</span></p>
-<div class="annotated-code">
-<p><span><em>«pythagoras»=</em></span></p>
-<div class="sourceCode" id="pythagoras"><pre class="sourceCode python"><code class="sourceCode python"><span id="pythagoras-1"><a href="#pythagoras-1"></a><span class="kw">def</span> vector_length(x, y):</span>
-<span id="pythagoras-2"><a href="#pythagoras-2"></a>    <span class="cf">return</span> sqrt(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)</span></code></pre></div>
+<p>The square of the hypothenuse is the sum of the two right-angled
+sides squared: <span class="math display">\[a^2 + b^2 = c^2\]</span></p>
+<div class="named-code-block">
+<div class="code-block-title">
+«pythagoras»
+</div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vector_length(x, y):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sqrt(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
 <blockquote>
-<p>“Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.” <a href="http://www.literateprogramming.com/knuthweb.pdf">Knuth - Literate Programming</a></p>
+<p>“Let us change our traditional attitude to the construction of
+programs: Instead of imagining that our main task is to instruct a
+computer what to do, let us concentrate rather on explaining to human
+beings what we want a computer to do.” <a
+href="http://www.literateprogramming.com/knuthweb.pdf">Knuth - Literate
+Programming</a></p>
 </blockquote>
 <h4 id="compose-your-program">Compose your program</h4>
 <div class="example">
 <div class="given-input">
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a> To count the words in a sentence, first</span>
-<span id="cb3-2"><a href="#cb3-2"></a> split the sentence into words, then</span>
-<span id="cb3-3"><a href="#cb3-3"></a> count the number of words in the list.</span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a> <span class="bn">``` {.python #word-count}</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="bn"> def word_count(sentence):</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="bn">     &lt;&lt;split-into-words&gt;&gt;</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="bn">     &lt;&lt;count-words&gt;&gt;</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="bn">     return count</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="bn"> ```</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a></span>
-<span id="cb3-12"><a href="#cb3-12"></a> The default arguments to the <span class="bn">`.split`</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a> method split on any white space.</span>
-<span id="cb3-14"><a href="#cb3-14"></a></span>
-<span id="cb3-15"><a href="#cb3-15"></a> <span class="bn">``` {.python #split-into-words}</span></span>
-<span id="cb3-16"><a href="#cb3-16"></a><span class="bn"> words = sentence.split()</span></span>
-<span id="cb3-17"><a href="#cb3-17"></a><span class="bn"> ```</span></span>
-<span id="cb3-18"><a href="#cb3-18"></a></span>
-<span id="cb3-19"><a href="#cb3-19"></a> Counting is done with the <span class="bn">`length`</span></span>
-<span id="cb3-20"><a href="#cb3-20"></a> function.</span>
-<span id="cb3-21"><a href="#cb3-21"></a></span>
-<span id="cb3-22"><a href="#cb3-22"></a> <span class="bn">``` {.python #count-words}</span></span>
-<span id="cb3-23"><a href="#cb3-23"></a><span class="bn"> count = len(words)</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a><span class="bn"> ```</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a> To count the words in a sentence, first</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> split the sentence into words, then</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a> count the number of words in the list.</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a> <span class="in">``` {.python #word-count}</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="in"> def word_count(sentence):</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="in">     &lt;&lt;split-into-words&gt;&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="in">     &lt;&lt;count-words&gt;&gt;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="in">     return count</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="in"> ```</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a> The default arguments to the <span class="in">`.split`</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a> method split on any white space.</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a> <span class="in">``` {.python #split-into-words}</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="in"> words = sentence.split()</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="in"> ```</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a> Counting is done with the <span class="in">`length`</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a> function.</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a> <span class="in">``` {.python #count-words}</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="in"> count = len(words)</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="in"> ```</span></span></code></pre></div>
 </div>
 <div class="generated-output">
-<p>To count the words in a sentence, first split the sentence into words, then count the number of words in the list.</p>
-<div class="annotated-code">
-<p><span><em>«word-count»=</em></span></p>
-<div class="sourceCode" id="word-count"><pre class="sourceCode python"><code class="sourceCode python"><span id="word-count-1"><a href="#word-count-1"></a><span class="kw">def</span> word_count(sentence):</span>
-<span id="word-count-2"><a href="#word-count-2"></a>    <span class="op">&lt;&lt;</span>split<span class="op">-</span>into<span class="op">-</span>words<span class="op">&gt;&gt;</span></span>
-<span id="word-count-3"><a href="#word-count-3"></a>    <span class="op">&lt;&lt;</span>count<span class="op">-</span>words<span class="op">&gt;&gt;</span></span>
-<span id="word-count-4"><a href="#word-count-4"></a>    <span class="cf">return</span> count</span></code></pre></div>
+<p>To count the words in a sentence, first split the sentence into
+words, then count the number of words in the list.</p>
+<div class="named-code-block">
+<div class="code-block-title">
+«word-count»
 </div>
-<p>The default arguments to the <code>.split</code> method split on any white space.</p>
-<div class="annotated-code">
-<p><span><em>«split-into-words»=</em></span></p>
-<div class="sourceCode" id="split-into-words"><pre class="sourceCode python"><code class="sourceCode python"><span id="split-into-words-1"><a href="#split-into-words-1"></a>words <span class="op">=</span> sentence.split()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> word_count(sentence):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;&lt;</span>split<span class="op">-</span>into<span class="op">-</span>words<span class="op">&gt;&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;&lt;</span>count<span class="op">-</span>words<span class="op">&gt;&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> count</span></code></pre></div>
+</div>
+<p>The default arguments to the <code>.split</code> method split on any
+white space.</p>
+<div class="named-code-block">
+<div class="code-block-title">
+«split-into-words»
+</div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> sentence.split()</span></code></pre></div>
 </div>
 <p>Counting is done with the <code>len</code> function.</p>
-<div class="annotated-code">
-<p><span><em>«count-words»=</em></span></p>
-<div class="sourceCode" id="count-words"><pre class="sourceCode python"><code class="sourceCode python"><span id="count-words-1"><a href="#count-words-1"></a>count <span class="op">=</span> <span class="bu">len</span>(words)</span></code></pre></div>
+<div class="named-code-block">
+<div class="code-block-title">
+«count-words»
+</div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="bu">len</span>(words)</span></code></pre></div>
 </div>
 </div>
 </div>
 <blockquote>
 <p>“Talk is cheap. Show me the code.” <a href="">Linus Torvalds</a></p>
 </blockquote>
-<h4 id="test-your-documentation">Test your documentation</h4>
-<div class="example">
-<div class="given-input">
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a> Counting words, the zero-case:</span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a> <span class="bn">``` {.python .eval #word-count}</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="bn"> word_count(&quot;&quot;)</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="bn"> ```</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a></span>
-<span id="cb4-7"><a href="#cb4-7"></a> And a small sentence:</span>
-<span id="cb4-8"><a href="#cb4-8"></a></span>
-<span id="cb4-9"><a href="#cb4-9"></a> <span class="bn">``` {.python .doctest #word-count}</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="bn"> word_count(&quot;Hebban olla uogala&quot;)</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="bn"> ---</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="bn"> 4</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="bn"> ```</span></span></code></pre></div>
-</div>
-<div class="generated-output">
-<p>Counting words, the zero-case:</p>
-<div class="doctest" data-status="SUCCESS">
-<div class="doctestInput">
-<div class="annotated-code">
-<p><span><em>«word-count»+</em></span></p>
-<div class="sourceCode" id="word-count"><pre class="sourceCode python eval"><code class="sourceCode python"><span id="word-count-1"><a href="#word-count-1"></a>word_count(<span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</div>
-</div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb5"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1"></a>0</span></code></pre></div>
-</div>
-</div>
-<p>And a small sentence:</p>
-<div class="doctest" data-status="FAIL">
-<div class="doctestInput">
-<div class="annotated-code">
-<p><span><em>«word-count»+</em></span></p>
-<div class="sourceCode" id="word-count"><pre class="sourceCode python doctest"><code class="sourceCode python"><span id="word-count-1"><a href="#word-count-1"></a>word_count(<span class="st">&quot;Hebban olla uogala&quot;</span>)</span></code></pre></div>
-</div>
-</div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb6"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1"></a>3</span></code></pre></div>
-</div>
-<div class="doctestExpect">
-<div class="sourceCode" id="cb7"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1"></a>4</span></code></pre></div>
-</div>
-</div>
-</div>
-</div>
+<!--
+#### Test your documentation
+::: {.example}
+:::: {.given-input}
+~~~markdown
+ Counting words, the zero-case:
+
+ ``` {.python .eval #word-count}
+ word_count("")
+ ```
+
+ And a small sentence:
+
+ ``` {.python .doctest #word-count}
+ word_count("Hebban olla uogala")
+ ---
+ 4
+ ```
+~~~
+::::
+:::: {.generated-output}
+Counting words, the zero-case:
+
+``` {.python .eval #word-count}
+word_count("")
+```
+
+And a small sentence:
+
+``` {.python .doctest #word-count}
+word_count("Hebban olla uogala")
+---
+4
+```
+::::
+:::-->
 <h1 id="documentation">Documentation</h1>
-<p>The latest version of Entangled is</p>
-<blockquote>
-<div class="doctest" data-status="SUCCESS">
-<div class="doctestInput">
-<div class="annotated-code">
-<p><span><em>«entangled-version»=</em></span></p>
-<div class="sourceCode" id="entangled-version"><pre class="sourceCode bash eval"><code class="sourceCode bash"><span id="entangled-version-1"><a href="#entangled-version-1"></a><span class="ex">entangled</span> --version</span></code></pre></div>
-</div>
-</div>
-<div class="doctestResult">
-<div class="sourceCode" id="cb8"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1"></a>1.2.4</span></code></pre></div>
-</div>
-</div>
-</blockquote>
 <ul>
-<li><a href="https://entangled.github.io/examples">Example gallery</a></li>
-<li><a href="tutorial.html">Tutorial: setting up a Literate project</a></li>
+<li><a href="tutorial.html">Tutorial: setting up a Literate
+project</a></li>
 <li><a href="manual.html">User Manual</a></li>
-<li><a href="https://entangled.github.io/mkdocs">Use MkDocs to publish</a></li>
+<li><a href="https://entangled.github.io/examples">Example
+gallery</a></li>
+<li><a href="https://entangled.github.io/mkdocs-plugin">Use MkDocs to
+publish</a></li>
 </ul>
-<h2 id="components">Components</h2>
-<ul>
-<li><a href="https://entangled.github.io/bootstrap">Use the Bootstrap 4 template</a></li>
-<li><a href="https://github.com/entangled/bootstrap-submodule">Bootstrap submodule</a></li>
-<li><a href="https://entangled.github.io/filters">Pandoc filters</a></li>
-</ul>
-<h1 id="section-entangled">Installing Entangled</h1>
-<h2 id="prebuilt-binaries">Prebuilt binaries</h2>
-<p>We provide a prebuilt binary for Linux. The binary is statically compiled, so it should run on any distro. You can download them <a href="https://github.com/entangled/entangled/releases/latest">from the Github releases section</a>. We’re still working on providing binaries for Windows and MacOS.</p>
-<p>If you downloaded the latest tarball, you can install Entangled by copying the contents to <code>~/.local/</code>, or <code>/usr/local</code>. If you prefer an uncluttered <code>local</code> directory, checkout <a href="https://www.gnu.org/software/stow/">GNU Stow</a>.</p>
-<h2 id="from-source">From source</h2>
-<p>Entangled is written in Haskell, and can be built on Linux, MacOS and Windows. Currently the best way to install, is to <a href="https://github.com/entangled/entangled">git clone https://github.com/entangled/entangled</a>, and build with GHC ≥ 8.6 using Cabal 3.0. Most GNU/Linux distributions ship an older version of Haskell. The easiest way to install a newer version is through <a href="https://www.haskell.org/ghcup/">GHCUp</a>.</p>
-<h2 id="docker">Running Entangled with Docker</h2>
-<p>Entangled is available as a <a href="https://hub.docker.com/r/nlesc/entangled">Docker image</a>.</p>
-<p>Assuming you have created a Markdown file, say <code>program.md</code>, you can start <code>entangled</code> by running</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="ex">docker</span> run --rm --user <span class="va">$(</span><span class="fu">id</span> -u<span class="va">)</span>:<span class="va">$(</span><span class="fu">id</span> -g<span class="va">)</span> --volume <span class="va">$PWD</span>:/data \</span>
-<span id="cb9-2"><a href="#cb9-2"></a>        nlesc/entangled deamon ./program.md</span></code></pre></div>
-<p>This command starts a Docker container with the current working directory mounted as /data and running with your user/group id so files are written with the correct ownership.</p>
-<h2 id="pandoc-filters">Pandoc filters</h2>
-<p>We have created a set of Python based Pandoc filters that can:</p>
-<ul>
-<li>(forward) <strong>Tangle</strong> your code</li>
-<li>Add <strong>name tags</strong> to rendered output</li>
-<li>Run <strong>documentation tests</strong> through Jupyter</li>
-</ul>
-<p>It is easy to install and has almost no dependencies outside of Pandoc and a recent version of Python (≥ 3.7). This also makes the Python filters very easy to setup on automated builds, like Github Actions.</p>
-<p>Install these filters using:</p>
-<pre><code>    pip install entangled-filters</code></pre>
-<p>More information on Entangled filters: <a href="https://github.com/entangled/filters">https://github.com/entangled/filters</a></p>
-<h2 id="bootstrap-web-template">Bootstrap web template</h2>
-<p>To help you easily create a presentable website from your literate code, we provide a Bootstrap template for Pandoc. Probably the best way to use this template, is to fork <a href="https://github.com/entangled/bootstrap-submodule">our repository at entangled/bootstrap-submodule</a>, and add your fork as a submodule in your project:</p>
+<h2 id="bootstrap-web-template-for-pandoc">Bootstrap web template for
+Pandoc</h2>
+<p>To help you easily create a presentable website from your literate
+code, we provide a Bootstrap template for Pandoc. Probably the best way
+to use this template, is to fork <a
+href="https://github.com/entangled/bootstrap-submodule">our repository
+at entangled/bootstrap-submodule</a>, and add your fork as a submodule
+in your project:</p>
 <pre><code>    git submodule add git@github.com:&lt;my bootstrap-submodule fork&gt;</code></pre>
-<p>This way you can tweak the template to your own wishes. If you want to play around first, you can also use the cookiecutter template,</p>
+<p>This way you can tweak the template to your own wishes. If you want
+to play around first, you can also use the cookiecutter template,</p>
 <pre><code>    cookiecutter https://github.com/entangled/bootstrap</code></pre>
-<p>but this approach is less flexible. For more information, see <a href="tutorial.html">the tutorial</a>.</p>
+<p>but this approach is less flexible. For more information, see <a
+href="tutorial.html">the tutorial</a>.</p>
 <h1 id="section-links">External Links</h1>
 <h3 id="blogs">Blogs</h3>
 <ul>
-<li><a href="https://blog.esciencecenter.nl/why-all-youll-ever-need-is-markdown-dc604f0ab309">Why all you’ll ever need is Markdown</a> — Introduction to Pandoc, and Pandoc filters.</li>
-<li><a href="https://blog.esciencecenter.nl/entangled-1744448f4b9f">Entangled, a bi-directional Literate Programming tool</a> — Presenting Entangled, a tool for pain free literate programming.</li>
+<li><a
+href="https://blog.esciencecenter.nl/why-all-youll-ever-need-is-markdown-dc604f0ab309">Why
+all you’ll ever need is Markdown</a> — Introduction to Pandoc, and
+Pandoc filters.</li>
+<li><a
+href="https://blog.esciencecenter.nl/entangled-1744448f4b9f">Entangled,
+a bi-directional Literate Programming tool</a> — Presenting Entangled, a
+tool for pain free literate programming.</li>
+<li><a
+href="https://blog.esciencecenter.nl/literate-programming-in-science-1669094541a7">Literate
+Programming in Science: the why</a> — Explaining why Literate
+Programming is particularly well matched with scientific
+programming.</li>
+<li><a
+href="https://blog.esciencecenter.nl/literate-programming-in-science-ed94dcc8f758">Literate
+Programming in Science: the how</a> — Showing methods for Literate
+Programming, comparing Entangled to Jupyter, RMarkdown and
+Org-mode.</li>
+<li><a
+href="https://blog.esciencecenter.nl/unweaving-legacy-code-using-entangled-2e6380a88b2f">Unweaving
+legacy code using Entangled</a> — Showing how you can use Entangled to
+reverse-engineer unreadable legacy code.</li>
 </ul>
 <h3 id="literate-books">Literate Books</h3>
-<p>These are some awesome books written with a literate philosophy in mind.</p>
+<p>These are some awesome books written with a literate philosophy in
+mind.</p>
 <div class="container-fluid my-4">
 <div class="card-deck">
-<div class="card rounded-lg">
+<div class="card rounded-1g">
 <div class="row no-gutters">
 <div class="col-4">
-<img src="img/pbrt.png" title="fig:" style="width:100.0%" />
+<img src="img/pbrt.png"
+title="Pharr, Jakob &amp; Humphreys - Physically Based Rendering"
+style="width:100.0%"
+alt="Pharr, Jakob &amp; Humphreys - Physically Based Rendering" />
 </div>
 <div class="col-8">
-<div class="card-body">
-<h3 class="card-title">Pharr, Jakob &amp; Humphreys - Physically Based Rendering</h3>
+<section class="card-title card-body">
+<h3 class="card-title">Pharr, Jakob &amp; Humphreys - Physically Based
+Rendering</h3>
 <div class="card-text">
-<p>Explains physically realistic 3D rendering, while implementing the same techniques in C++. This book is so amazing, it actually won an Acadamy Award for technical achievement. The book uses the same <em>noweb</em> notation for code block references we do.</p>
+<p>Explains physically realistic 3D rendering, while implementing the
+same techniques in C++. This book is so amazing, it actually won an
+Acadamy Award for technical achievement. The book uses the same
+<em>noweb</em> notation for code block references we do.</p>
 </div>
-<a href="https://www.pbrt.org/" class="btn btn-secondary mt-auto mx-4">PBRT</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="container-fluid my-4">
-<div class="card-deck">
-<div class="card rounded-lg">
-<div class="row no-gutters">
-<div class="col-4">
-<img src="img/sicm.jpg" title="fig:" style="width:100.0%" />
-</div>
-<div class="col-8">
-<div class="card-body">
-<h3 class="card-title">Sussman &amp; Wisdom - Structure and Interpretation of Classical Mechanics</h3>
-<div class="card-text">
-<p>Does not use <em>noweb</em>, but subscribes to the many founding principles of literate programming. This is a text book on classical mechanics and specifically the Lagrangian and Hamiltonian discriptions of physics.</p>
-</div>
-<a href="https://mitpress.mit.edu/books/structure-and-interpretation-classical-mechanics-second-edition" class="btn btn-secondary mt-auto mx-4">SICM</a>
-</div>
+<a href="https://www.pbrt.org/"
+class="btn btn-secondary mt-auto mx-4">PBRT</a>
+</section>
 </div>
 </div>
 </div>
@@ -374,38 +393,77 @@ literate programming for the new millennium
 </div>
 <div class="container-fluid my-4">
 <div class="card-deck">
-<div class="card rounded-lg">
+<div class="card rounded-1g">
 <div class="row no-gutters">
 <div class="col-4">
-<img src="img/hsom.jpg" title="fig:" style="width:100.0%" />
+<img src="img/sicm.jpg"
+title="Sussman &amp; Wisdom - Structure and Interpretation of Classical Mechanics"
+style="width:100.0%"
+alt="Sussman &amp; Wisdom - Structure and Interpretation of Classical Mechanics" />
 </div>
 <div class="col-8">
-<div class="card-body">
-<h3 class="card-title">Hudak &amp; Quick - The Haskell School of Music</h3>
+<section class="card-title card-body">
+<h3 class="card-title">Sussman &amp; Wisdom - Structure and
+Interpretation of Classical Mechanics</h3>
 <div class="card-text">
-<p>From signals to symphonies, this book fuses the authors’ passion for music and the Haskell programming language.</p>
+<p>Does not use <em>noweb</em>, but subscribes to the many founding
+principles of literate programming. This is a text book on classical
+mechanics and specifically the Lagrangian and Hamiltonian descriptions
+of physics.</p>
 </div>
-<a href="http://euterpea.com/haskell-school-of-music/" class="btn btn-secondary mt-auto mx-4">HSOM</a>
+<a
+href="https://mitpress.mit.edu/books/structure-and-interpretation-classical-mechanics-second-edition"
+class="btn btn-secondary mt-auto mx-4">SICM</a>
+</section>
 </div>
 </div>
 </div>
 </div>
 </div>
+<div class="container-fluid my-4">
+<div class="card-deck">
+<div class="card rounded-1g">
+<div class="row no-gutters">
+<div class="col-4">
+<img src="img/hsom.jpg"
+title="Hudak &amp; Quick - The Haskell School of Music"
+style="width:100.0%"
+alt="Hudak &amp; Quick - The Haskell School of Music" />
 </div>
-<h3 id="pandoc-filters-1">Pandoc filters</h3>
+<div class="col-8">
+<section class="card-title card-body">
+<h3 class="card-title">Hudak &amp; Quick - The Haskell School of
+Music</h3>
+<div class="card-text">
+<p>From signals to symphonies, this book fuses the authors’ passion for
+music and the Haskell programming language.</p>
+</div>
+<a href="http://euterpea.com/haskell-school-of-music/"
+class="btn btn-secondary mt-auto mx-4">HSOM</a>
+</section>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="pandoc-filters">Pandoc filters</h3>
 <ul>
-<li><a href="https://github.com/kiwi0fruit/knitty">Knitty</a> — Expands code-cells through a Jupyter interface. Uses Panflute.</li>
-<li><a href="https://github.com/alexpdp7/pandocsql">pandocsql</a> — Inserts tables in your markdown into an Sqlite database, and run queries that appear as tables in the output. Uses Panflute.</li>
+<li><a href="https://github.com/kiwi0fruit/knitty">Knitty</a> — Expands
+code-cells through a Jupyter interface. Uses Panflute.</li>
+<li><a href="https://github.com/alexpdp7/pandocsql">pandocsql</a> —
+Inserts tables in your markdown into an Sqlite database, and run queries
+that appear as tables in the output. Uses Panflute.</li>
 </ul>
 <h3 id="dev-tools">Dev tools</h3>
 <ul>
-<li><a href="https://github.com/sergiocorreia/panflute">Panflute</a> — A “Pythonic” interface for creating Pandoc filters.</li>
+<li><a href="https://github.com/sergiocorreia/panflute">Panflute</a> — A
+“Pythonic” interface for creating Pandoc filters.</li>
 </ul>
 </div></main>
 
 <footer class="py-4 footer"><div class="container">
-<a href="https://esciencecenter.nl/"><img src="img/escience_white.png" style="height: 20pt" /></a><br />
-2020-06-10 — license: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2</a>
+<a href="https://esciencecenter.nl/"><img src="img/escience_white.png"
+style="height: 20pt" /></a>
 </div></footer>
 
 
