@@ -1,0 +1,16 @@
+[project]
+name = "new-pages"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "entangled",
+    "entangled-cli>=2.2.1",
+    "mkdocs>=1.6.1",
+    "mkdocs-bibtex>=4.4.0",
+    "mkdocs-entangled-plugin>=0.5.0",
+    "mkdocs-macros-plugin>=1.4.0",
+    "mkdocs-material>=9.6.21",
+]
+
+[tool.uv.sources]
+entangled = { workspace = true }
