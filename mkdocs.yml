@@ -1,7 +1,29 @@
 site_name: Entangled
+site_url: https://entangled.github.io
+
+nav:
+    - index.md
+    - Configuration:
+        - markup.md
+        - templates.md
+    - Hooks:
+        - hooks.md
+        - quarto_attributes.md
+    - Workflows:
+        - workflows.md
+        - build-hook.md
+    - Troubleshooting:
+        - git.md
+    - Resources:
+        - ieee-escience-paper.md
+        - manual.md
+
+extra_css:
+  - stylesheets/extra.css
 
 plugins:
   - search
+  - tags
   - bibtex:
      bib_file: "refs.bib"
   - entangled
@@ -9,14 +31,21 @@ plugins:
 markdown_extensions:
   - admonition
   - footnotes
+  - md_in_html
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.superfences 
+  - pymdownx.superfences
+  - pymdownx.details
 
 theme:
   name: material
   custom_dir: docs/overrides
   logo: assets/logo.svg
+  features:
+    - navigation.instant
+    - toc.follow
+    - toc.integrate
+    - content.code.copy
   palette: 
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"

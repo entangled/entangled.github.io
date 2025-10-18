@@ -1,7 +1,31 @@
-# Entangled, a Bidirectional System for Sustainable Literate Programming
+---
+tags:
+    - research
+    - motivation
+---
+
+# Research Paper
 **Johan Hidding ([Netherlands eScience Center](https://esciencecenter.nl/))**
 
-Published version: [doi:10.1109/e-Science58273.2023.10254816](https://doi.org/10.1109/e-Science58273.2023.10254816)
+> Published version: J. Hidding, **Entangled, a Bidirectional System for Sustainable Literate Programming**, 2023 IEEE 19th International Conference on e-Science (e-Science), Limassol, Cyprus, 2023, pp. 1-9
+> [doi:10.1109/e-Science58273.2023.10254816](https://doi.org/10.1109/e-Science58273.2023.10254816)
+>
+> ??? BibTeX
+>
+>     ```bibtex
+>     @inproceedings{Hidding2023,
+>     author={Hidding, Johan},
+>     booktitle={2023 IEEE 19th International Conference on e-Science (e-Science)}, 
+>     title={Entangled, a Bidirectional System for Sustainable Literate Programming}, 
+>     year={2023},
+>     volume={},
+>     number={},
+>     pages={1-9},
+>     keywords={Open Access;Source coding;Debugging;Programming;Software;Software reliability;Synchronization;literate programming;open science;tooling},
+>     doi={10.1109/e-Science58273.2023.10254816}}
+>     ```
+
+&copy; 2023 IEEE
 
 ### Abstract
 
