@@ -1,8 +1,16 @@
 .md-typeset {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .md-typeset .admonition {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
+.md-typeset blockquote {
+    font-family: serif;
+    margin: 10pt 80pt 10pt 40pt;
+}
+
+.md-typeset blockquote .source {
+    text-align: right;
+}

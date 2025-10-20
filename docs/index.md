@@ -3,8 +3,21 @@
 
 **Entangled** lets you write code and proze in a single document. It extracts working source code from your documentation, and keeps the documentation and source code mutualy synchronized. Entangled works with any programming language and supports a wide variety of markup languages, principally most dialects of Markdown.
 
-<section markdown="1" style="display: flex">
+<!-- <section markdown="1" style="display: flex">
 <div markdown="1" style="flex-basis:50%; padding: 20pt">
+</div>
+<div markdown="1" style="flex-basis:50%; padding: 20pt">
+</div>
+</section>
+-->
+
+> Let us change our traditional attitude to the construction of programs:
+> Instead of imagining that our main task is to instruct a computer what to do,
+> let us concentrate rather on explaining to human beings what we want a
+> computer to do.
+> <div markdown="1" class="source">
+> [Donald Knuth - Literate Programming](http://www.literateprogramming.com/knuthweb.pdf)
+> </div>
 
 !!! note "Why Entangled"
    
@@ -14,37 +27,21 @@
     - your favourite **programming language**: Entangled is agnostic to programming languages.
     - your favourite **document generator**: Entangled is configurable to any dialect of Markdown.
 
-</div>
-<div markdown="1" style="flex-basis:50%; padding: 20pt">
-
-!!! note "Quotes"
-
-    > "A critical aspect of a programming language is the means it provides
-    for using names to refer to computational objects." [Abelson, Sussman & Sussman - SICP](https://mitpress.mit.edu/sites/default/files/sicp/index.html)
-
-    ---
-
-    > "Let us change our traditional attitude to the construction of programs:
-    > Instead of imagining that our main task is to instruct a computer what to do,
-    > let us concentrate rather on explaining to human beings what we want a
-    > computer to do." [Knuth - Literate Programming](http://www.literateprogramming.com/knuthweb.pdf)
-
-    ---
-
-    > “Talk is cheap. Show me the code.” [Linus Torvalds]()
-
-</div>
-</section>
+<script async id="asciicast-591604" src="https://asciinema.org/a/591604.js"
+        data-autoplay="true" data-speed="2"></script>
 
 ## Get Started
-With the 2.0 release, Entangled is now available as a Python package. To install Entangled, all you need is a Python (version &ge;3.12) installation. 
+To install Entangled, all you need is a Python (version &ge;3.12) installation. 
 
 ```bash
 pip install entangled-cli
 ```
 
-<script async id="asciicast-591604" src="https://asciinema.org/a/591604.js"
-        data-autoplay="true" data-speed="2"></script>
+After installation you can start using it in any of your projects. It is advised to try out Entangled in a fresh project using one of the available templates. The following uses the [`uv` package manager](https://docs.astral.sh/uv/) to create a virtual environment containing all the other Python dependencies.
+
+```bash
+entangled new mkdocs my-toy-project
+```
 
 ## About
 Entangled helps you write Literate Programs in Markdown. You put all your code inside Markdown code blocks. Entangled automatically extracts the code and writes it to more traditional source files. You can then edit these generated files, and the changes are being fed back to the Markdown. In this way Entangled offers a two-way synchronisation mechanism and ensures that your Markdown files stay up-to-date with your code and vice-versa.
@@ -67,6 +64,9 @@ We are trying to increase the visibility of Entangled. If you like Entangled, pl
 ```
 
 ## Basic Use
+
+> "A critical aspect of a programming language is the means it provides
+for using names to refer to computational objects." [Abelson, Sussman & Sussman - SICP](https://mitpress.mit.edu/sites/default/files/sicp/index.html)
 
 Run the `entangled watch` daemon in the root of your project folder. By default all Markdown files are monitored for fenced code blocks like so:
 

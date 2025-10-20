@@ -30,6 +30,7 @@ plugins:
 
 markdown_extensions:
   - admonition
+  - attr_list
   - footnotes
   - md_in_html
   - pymdownx.highlight:
@@ -55,7 +56,8 @@ theme:
 
     # Palette toggle for light mode
     - scheme: slate
-      primary: teal
+      primary: pink
+      accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to dark mode
@@ -63,7 +65,8 @@ theme:
 
     # Palette toggle for dark mode
     - scheme: default
-      primary: teal
+      primary: pink
+      accent: indigo
       toggle:
         icon: material/brightness-7
         name: Switch to light mode
