@@ -1,5 +1,7 @@
 # Welcome to Entangled
 ![PyPI - Version](https://img.shields.io/pypi/v/entangled-cli)
+[![Upload Python Package](https://github.com/entangled/entangled.py/actions/workflows/deploy.yml/badge.svg)](https://github.com/entangled/entangled.py/actions/workflows/deploy.yml)
+[![Python package](https://github.com/entangled/entangled.py/actions/workflows/python-package.yml/badge.svg)](https://github.com/entangled/entangled.py/actions/workflows/python-package.yml)
 
 **Entangled** lets you write code and proze in a single document. It extracts working source code from your documentation, and keeps the documentation and source code mutualy synchronized. Entangled works with any programming language and supports a wide variety of markup languages, principally most dialects of Markdown.
 

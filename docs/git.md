@@ -19,6 +19,7 @@ git add .
 git commit -m 'fixed everything'   # save everything you did
 entangled tangle --force           # overwrites some changes you made
 git restore src/brilliant_code.c   # retrieve from latest commit
+touch src/brilliant_code.c         # set modification time of the file
 entangled stitch                   # apply changes back to markdown
 git add .
 git commit --amend                 # amend your commit to perfection

@@ -10,7 +10,8 @@ tags:
 
 # Document Markup Languages
 
-The default setting is to use attributes enclosed in curly braces. This offers a relatively noise-free syntax for denoting code blocks, their labels and file targets. However, not all document generators understand this syntax.
+The default setting is to use attributes enclosed in curly braces. This offers a relatively noise-free syntax for denoting code blocks, their labels and file targets. However, not all document generators understand this syntax. 
+
 
 ## Vanilla (Github flavoured) Markdown and Typst
 
@@ -37,13 +38,19 @@ if __name__ == "__main__":
 This needs the following `entangled.toml`:
 
 ```toml
-#| file: entangled.toml
 version="2.0"
 hooks=["quarto_attributes"]
 
 [markers]
 open="^(?P<indent>\\s*)```(?P<properties>.*)$"
 close="^(?P<indent>\\s*)```\\s*$"
+```
+
+Or, use the `basic` style setting to the same effect:
+
+```toml
+version="2.4"
+style="basic"
 ```
 
 ## Not yet implemented: Restructured Text
