@@ -37,10 +37,10 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.superfences
   - pymdownx.details
+  - def_list
 
 theme:
   name: material
-  custom_dir: docs/overrides
   logo: assets/logo.svg
   features:
     - navigation.instant
