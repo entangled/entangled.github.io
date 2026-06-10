@@ -6,6 +6,11 @@ nav:
     - Configuration:
         - markup.md
         - templates.md
+    - Weavers:
+        - mkdocs.md
+        - quarto.md
+        - typst.md
+        - pandoc.md
     - Hooks:
         - hooks.md
         - quarto_attributes.md
@@ -47,7 +52,7 @@ theme:
     - toc.follow
     - toc.integrate
     - content.code.copy
-  palette: 
+  palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
