@@ -3,6 +3,7 @@ site_url: https://entangled.github.io
 
 nav:
     - index.md
+    - examples.md
     - Configuration:
         - markup.md
         - templates.md
@@ -11,6 +12,7 @@ nav:
         - quarto.md
         - typst.md
         - pandoc.md
+        - weaver-wishlist.md
     - Hooks:
         - hooks.md
         - quarto_attributes.md
