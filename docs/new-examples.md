@@ -23,9 +23,13 @@ title: "Examples"
     
     [This demo](https://jhidding.github.io/chaotic-pendulum/) uses PureScript to code a chaotic pendulum widget. The website is rendered with Pandoc, using a Bootstrap template. If you're in for learning some advanced mechanics and PureScript at the same time, or you just want to see the demo, take a look!
 
-
 !!! note "Adhesion Model"
     [The adhesion model](https://jhidding.github.io/adhesion-code/) simulates the formation of structure in the Universe on the largest scales. This code computes this model using the C++ CGAL library.
 
     [![](fig/adhesion-code-thumb.jpg)](https://jhidding.github.io/adhesion-code/)
+
+!!! note "Guide to C++ and WASM"
+    [Guide to make C++ available as a web application](https://nlesc-jcer.github.io/cpp2wasm/) shows how you can take some C++ code and embed it in a simple web UI. As an example it takes the Newton-Raphson root finder algorithm. The guide uses `docsify` to generate HTML on the fly, browser side.
+
+    [![WASM logo](https://entangled.github.io/examples/img/web-assembly-logo.svg)](https://nlesc-jcer.github.io/cpp2wasm/)
 </div>
