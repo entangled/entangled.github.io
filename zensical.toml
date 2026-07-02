@@ -12,7 +12,7 @@ nav = [ "index.md", "examples.md",
 	{"Hooks" 	       = ["hooks.md", "quarto_attributes.md"]},
 	{"Workflows"       = ["workflows.md", "build-hook.md"]},
 	{"Troubleshooting" = ["git.md"]},
-	{"Resources"       = ["manual.md", "ieee-escience-paper.md"]} ]
+	{"Resources"       = ["manual.md", "ieee-escience-paper.citeproc.md"]} ]
 
 [project.markdown_extensions.attr_list]
 [project.markdown_extensions.admonition]
