@@ -6,7 +6,7 @@ site_author = "Johan Hidding"
 copyright = "&copy; 2018-2026 Johan Hidding, Netherlands eScience Center"
 extra_css = ["stylesheets/extra.css"]
 
-nav = [ "index.md", "examples.md",
+nav = [ "index.md", "new-examples.md",
 	{"Configuration"   = ["markup.md", "templates.md"]},
 	{"Weavers"         = ["mkdocs.md", "quarto.md", "typst.md", "pandoc.md", "weaver-wishlist.md"]},
 	{"Hooks" 	       = ["hooks.md", "quarto_attributes.md"]},
